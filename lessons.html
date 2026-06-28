@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons - ImpulseLearn</title>
+    <link rel="stylesheet" href="impulselearn.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="wrap nav-inner">
+            <a class="brand" href="student-dashboard.html">
+                <span>⚡ ImpulseLearn<small>Momentum & Impulse</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="lessons.html">Lessons</a>
+                <a href="activities.html">Activities</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="exams.html">Exams</a>
+                <a href="missions.html">Missions</a>
+                <a href="simulation.html">Simulation</a>
+                <a href="tutorial.html">Tutorial</a>
+            </div>
+            <div class="nav-actions">
+                <span class="btn sm" style="background: rgba(108, 92, 231, 0.2);">
+                    Level <span class="level-value">1</span> | XP: <span class="xp-value">0</span>
+                </span>
+                <a href="student-dashboard.html" class="btn sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="lesson-container">
+        <div class="lesson-header">
+            <h1>📚 Momentum & Impulse Lessons</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 1rem;">
+                Master the fundamentals of momentum and impulse through these comprehensive lessons
+            </p>
+            <div style="margin-top: 2rem;">
+                <div class="progress-container" style="max-width: 500px; margin: 0 auto;">
+                    <div class="progress-bar" id="lessonProgress" style="width: 0%;"></div>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.9rem;">
+                    <span id="lessonProgressText">0/5 Lessons Completed</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Lesson 1 -->
+        <div class="lesson-content" id="lesson1">
+            <h2>Lesson 1: Introduction to Momentum</h2>
+            
+            <h3>What is Momentum?</h3>
+            <p>Momentum is a fundamental concept in physics that describes the quantity of motion an object has. Think of it as "how hard it is to stop something that's moving."</p>
+            
+            <div class="formula-box">
+                Momentum (p) = Mass (m) × Velocity (v)<br>
+                <span style="font-size: 0.9rem; color: var(--text-secondary);">p = m × v</span>
+            </div>
+            
+            <h3>Understanding the Components</h3>
+            <ul>
+                <li><strong>Mass (m):</strong> The amount of matter in an object, measured in kilograms (kg)</li>
+                <li><strong>Velocity (v):</strong> The speed of an object in a specific direction, measured in meters per second (m/s)</li>
+                <li><strong>Momentum (p):</strong> The product of mass and velocity, measured in kg·m/s</li>
+            </ul>
+            
+            <div class="example-box">
+                <strong>💡 Example 1: The Rolling Ball</strong>
+                <p>A ball with a mass of 2 kg is rolling at 5 m/s. What is its momentum?</p>
+                <p><strong>Solution:</strong> p = m × v = 2 kg × 5 m/s = <strong>10 kg·m/s</strong></p>
+            </div>
+            
+            <div class="example-box">
+                <strong>💡 Example 2: The Moving Car</strong>
+                <p>A car with a mass of 1000 kg is moving at 20 m/s. Calculate its momentum.</p>
+                <p><strong>Solution:</strong> p = m × v = 1000 kg × 20 m/s = <strong>20,000 kg·m/s</strong></p>
+            </div>
+            
+            <h3>Key Points to Remember</h3>
+            <ol>
+                <li>Momentum is a <strong>vector quantity</strong> - it has both magnitude and direction</li>
+                <li>Greater mass or greater velocity means greater momentum</li>
+                <li>Momentum is conserved in closed systems (no external forces)</li>
+                <li>Units: kilogram-meters per second (kg·m/s)</li>
+            </ol>
+            
+            <button class="btn primary full" onclick="completeLesson('lesson1')" style="margin-top: 2rem;">
+                ✅ Mark as Complete (+50 XP)
+            </button>
+        </div>
+
+        <!-- Lesson 2 -->
+        <div class="lesson-content" id="lesson2">
+            <h2>Lesson 2: Understanding Impulse</h2>
+            
+            <h3>What is Impulse?</h3>
+            <p>Impulse is the change in momentum that occurs when a force is applied to an object over a period of time. It explains why airbags and seatbelts are important for safety.</p>
+            
+            <div class="formula-box">
+                Impulse (J) = Force (F) × Time (Δt)<br>
+                <span style="font-size: 0.9rem; color: var(--text-secondary);">J = F × Δt</span>
+            </div>
+            
+            <h3>The Impulse-Momentum Theorem</h3>
+            <p>Impulse equals the change in momentum:</p>
+            <div class="formula-box">
+                Impulse = Change in Momentum<br>
+                <span style="font-size: 0.9rem; color: var(--text-secondary);">F × Δt = m × Δv</span>
+            </div>
+            
+            <h3>Understanding the Components</h3>
+            <ul>
+                <li><strong>Force (F):</strong> The push or pull applied to an object, measured in Newtons (N)</li>
+                <li><strong>Time (Δt):</strong> The duration over which the force is applied, measured in seconds (s)</li>
+                <li><strong>Impulse (J):</strong> The product of force and time, measured in Newton-seconds (N·s)</li>
+            </ul>
+            
+            <div class="example-box">
+                <strong>💡 Example 1: The Baseball Hit</strong>
+                <p>A baseball (mass = 0.145 kg) is hit by a bat. The force applied is 5000 N for 0.01 seconds. What is the impulse?</p>
+                <p><strong>Solution:</strong> J = F × Δt = 5000 N × 0.01 s = <strong>50 N·s</strong></p>
+            </div>
+            
+            <div class="example-box">
+                <strong>💡 Example 2: The Jumping Athlete</strong>
+                <p>An athlete lands on the ground with a force of 800 N over 0.5 seconds. Calculate the impulse.</p>
+                <p><strong>Solution:</strong> J = F × Δt = 800 N × 0.5 s = <strong>400 N·s</strong></p>
+            </div>
+            
+            <h3>Real-World Applications</h3>
+            <ul>
+                <li><strong>Airbags:</strong> Increase the time of impact, reducing the force on passengers</li>
+                <li><strong>Seatbelts:</strong> Stretch to increase stopping time, reducing injury</li>
+                <li><strong>Boxing gloves:</strong> Increase impact time to reduce force</li>
+                <li><strong>Crumple zones in cars:</strong> Absorb energy by increasing collision time</li>
+            </ul>
+            
+            <button class="btn primary full" onclick="completeLesson('lesson2')" style="margin-top: 2rem;">
+                ✅ Mark as Complete (+50 XP)
+            </button>
+        </div>
+
+        <!-- Lesson 3 -->
+        <div class="lesson-content" id="lesson3">
+            <h2>Lesson 3: Relationship Between Momentum and Impulse</h2>
+            
+            <h3>The Connection</h3>
+            <p>Momentum and impulse are directly related. When an impulse is applied to an object, it causes a change in the object's momentum. This relationship is described by the <strong>Impulse-Momentum Theorem</strong>.</p>
+            
+            <div class="formula-box">
+                Impulse = Change in Momentum<br>
+                <span style="font-size: 0.9rem; color: var(--text-secondary);">F × Δt = m × (v_f - v_i)</span>
+            </div>
+            
+            <h3>Breaking It Down</h3>
+            <ul>
+                <li><strong>v_f (final velocity):</strong> The velocity after the force is applied</li>
+                <li><strong>v_i (initial velocity):</strong> The velocity before the force is applied</li>
+                <li><strong>m × (v_f - v_i):</strong> The change in momentum (Δp)</li>
+            </ul>
+            
+            <div class="example-box">
+                <strong>💡 Example: The Soccer Ball</strong>
+                <p>A soccer ball (mass = 0.43 kg) is initially at rest. A player kicks it, applying a force of 400 N for 0.1 seconds. What is the final velocity?</p>
+                <p><strong>Solution:</strong></p>
+                <p>Step 1: Calculate impulse: J = F × Δt = 400 N × 0.1 s = 40 N·s</p>
+                <p>Step 2: Use impulse-momentum theorem: 40 = 0.43 × (v_f - 0)</p>
+                <p>Step 3: Solve for v_f: v_f = 40 / 0.43 = <strong>93 m/s</strong></p>
+            </div>
+            
+            <h3>Why This Matters</h3>
+            <ol>
+                <li><strong>Safety Design:</strong> Engineers use this relationship to design safer vehicles and equipment</li>
+                <li><strong>Sports Performance:</strong> Athletes use it to maximize speed and power</li>
+                <li><strong>Space Exploration:</strong> Rocket propulsion relies on momentum changes</li>
+                <li><strong>Everyday Life:</strong> From catching a ball to stopping a bicycle, we use this principle constantly</li>
+            </ol>
+            
+            <div class="example-box">
+                <strong>🎯 Interactive Example: The Egg Drop</strong>
+                <p>Drop an egg from 1 meter onto:</p>
+                <ul>
+                    <li>A hard floor (Δt = 0.01 s) - The egg breaks due to high force</li>
+                    <li>A pillow (Δt = 0.5 s) - The egg survives because the force is reduced</li>
+                </ul>
+                <p style="margin-top: 1rem;"><em>Same impulse, different forces due to different time intervals!</em></p>
+            </div>
+            
+            <button class="btn primary full" onclick="completeLesson('lesson3')" style="margin-top: 2rem;">
+                ✅ Mark as Complete (+50 XP)
+            </button>
+        </div>
+
+        <!-- Lesson 4 -->
+        <div class="lesson-content" id="lesson4">
+            <h2>Lesson 4: Law of Conservation of Momentum</h2>
+            
+            <h3>The Law</h3>
+            <p>The <strong>Law of Conservation of Momentum</strong> states that in a closed system (no external forces), the total momentum before an event equals the total momentum after the event.</p>
+            
+            <div class="formula-box">
+                Total Momentum Before = Total Momentum After<br>
+                <span style="font-size: 0.9rem; color: var(--text-secondary);">m₁v₁ᵢ + m₂v₂ᵢ = m₁v₁բ + m₂v₂բ</span>
+            </div>
+            
+            <h3>Key Principles</h3>
+            <ul>
+                <li>Momentum is <strong>conserved</strong> in collisions and explosions</li>
+                <li>The system must be <strong>closed</strong> (no external forces)</li>
+                <li>Momentum is a <strong>vector</strong> - direction matters!</li>
+                <li>This law applies to <strong>all types</strong> of collisions</li>
+            </ul>
+            
+            <h3>Types of Collisions</h3>
+            
+            <h3>1. Elastic Collision</h3>
+            <p>Both momentum AND kinetic energy are conserved. Objects bounce off each other without losing energy to heat or sound.</p>
+            <div class="example-box">
+                <strong>Example:</strong> Two billiard balls colliding, Newton's cradle
+            </div>
+            
+            <h3>2. Inelastic Collision</h3>
+            <p>Momentum is conserved, but kinetic energy is not. Some energy is converted to heat, sound, or deformation.</p>
+            <div class="example-box">
+                <strong>Example:</strong> A car crash, a lump of clay hitting the floor
+            </div>
+            
+            <h3>3. Perfectly Inelastic Collision</h3>
+            <p>The objects stick together after collision. Maximum kinetic energy is lost, but momentum is still conserved.</p>
+            <div class="example-box">
+                <strong>Example:</strong> Two cars colliding and sticking together, a bullet embedding in a block
+            </div>
+            
+            <div class="example-box">
+                <strong>💡 Example: The Colliding Carts</strong>
+                <p>Cart A (mass = 3 kg) moves at 4 m/s and collides with Cart B (mass = 2 kg) at rest. After collision, they stick together. What is their final velocity?</p>
+                <p><strong>Solution:</strong></p>
+                <p>Step 1: Initial momentum = (3 kg × 4 m/s) + (2 kg × 0 m/s) = 12 kg·m/s</p>
+                <p>Step 2: Final momentum = (3 kg + 2 kg) × v_f = 5 kg × v_f</p>
+                <p>Step 3: Set equal: 12 = 5 × v_f</p>
+                <p>Step 4: v_f = 12 / 5 = <strong>2.4 m/s</strong></p>
+            </div>
+            
+            <button class="btn primary full" onclick="completeLesson('lesson4')" style="margin-top: 2rem;">
+                ✅ Mark as Complete (+50 XP)
+            </button>
+        </div>
+
+        <!-- Lesson 5 -->
+        <div class="lesson-content" id="lesson5">
+            <h2>Lesson 5: Applications in Real Life</h2>
+            
+            <h3>Momentum and Impulse in the Real World</h3>
+            <p>The principles of momentum and impulse are everywhere around us. Understanding these concepts helps us design safer cars, better sports equipment, and even explore space!</p>
+            
+            <h3>🚗 Car Collisions</h3>
+            <p>Modern cars are designed with safety features that use momentum and impulse principles:</p>
+            <ul>
+                <li><strong>Crumple Zones:</strong> Increase collision time, reducing force on passengers</li>
+                <li><strong>Airbags:</strong> Deploy to increase stopping time from ~0.1s to ~0.5s</li>
+                <li><strong>Seatbelts:</strong> Stretch slightly to reduce the force of sudden stops</li>
+                <li><strong>Result:</strong> The same change in momentum happens, but over a longer time = less force = less injury</li>
+            </ul>
+            
+            <h3>⚽ Sports</h3>
+            <p>Athletes use momentum and impulse to improve performance:</p>
+            <ul>
+                <li><strong>Baseball:</strong> A bat increases contact time to transfer more momentum to the ball</li>
+                <li><strong>Tennis:</strong> Follow-through increases contact time, increasing impulse</li>
+                <li><strong>Boxing:</strong> Gloves increase impact time, reducing force on both boxer and opponent</li>
+                <li><strong>Golf:</strong> The club head speed determines the momentum transferred to the ball</li>
+            </ul>
+            
+            <h3>🚀 Rocket Launch</h3>
+            <p>Rockets work on the principle of conservation of momentum:</p>
+            <ul>
+                <li>Rocket expels gas downward at high speed (momentum downward)</li>
+                <li>Rocket gains equal momentum upward</li>
+                <li>This is called <strong>action-reaction</strong> (Newton's Third Law)</li>
+                <li>The faster the gas is expelled, the greater the rocket's momentum upward</li>
+            </ul>
+            
+            <div class="example-box">
+                <strong>💡 Example: The Rocket Equation</strong>
+                <p>A rocket expels 100 kg of gas at 3000 m/s downward. What is the rocket's upward momentum?</p>
+                <p><strong>Solution:</strong> By conservation of momentum, the rocket gains equal momentum upward.</p>
+                <p>Momentum = 100 kg × 3000 m/s = <strong>300,000 kg·m/s upward</strong></p>
+            </div>
+            
+            <h3>🍎 Falling Objects</h3>
+            <p>When objects fall, momentum increases due to gravity:</p>
+            <ul>
+                <li>Gravity applies a constant force, increasing velocity over time</li>
+                <li>Momentum increases continuously: p = m × v</li>
+                <li>When the object hits the ground, momentum changes rapidly</li>
+                <li>The ground applies an impulse to stop the object</li>
+                <li>Soft surfaces (grass, foam) increase stopping time, reducing force</li>
+            </ul>
+            
+            <div class="example-box">
+                <strong>💡 Example: The Falling Phone</strong>
+                <p>A phone (mass = 0.2 kg) falls and hits the ground at 10 m/s. If it stops in 0.01s on concrete or 0.2s on carpet, compare the forces:</p>
+                <p><strong>On concrete:</strong> F = Δp/Δt = (0.2 kg × 10 m/s) / 0.01s = <strong>200 N</strong></p>
+                <p><strong>On carpet:</strong> F = Δp/Δt = (0.2 kg × 10 m/s) / 0.2s = <strong>10 N</strong></p>
+                <p style="margin-top: 0.5rem;"><em>The carpet reduces the force by 20 times!</em></p>
+            </div>
+            
+            <h3>🌟 Summary of Real-World Applications</h3>
+            <div style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                <p><strong>Key Takeaway:</strong> Momentum and impulse principles are used in:</p>
+                <ul style="margin-top: 1rem;">
+                    <li>✅ Vehicle safety design (airbags, crumple zones)</li>
+                    <li>✅ Sports equipment and training</li>
+                    <li>✅ Rocket propulsion and space travel</li>
+                    <li>✅ Protective gear (helmets, padding)</li>
+                    <li>✅ Amusement park rides</li>
+                    <li>✅ Military applications (armor, ballistics)</li>
+                </ul>
+            </div>
+            
+            <button class="btn primary full" onclick="completeLesson('lesson5')" style="margin-top: 2rem;">
+                ✅ Mark as Complete (+50 XP)
+            </button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer-grid">
+            <div>
+                <strong>⚡ ImpulseLearn</strong>
+                <p style="color: var(--text-secondary);">Master the physics of momentum and impulse through interactive lessons.</p>
+            </div>
+            <div>
+                <strong>Continue Learning</strong>
+                <a href="activities.html">Activities</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="missions.html">Missions</a>
+            </div>
+            <div>
+                <strong>Practice</strong>
+                <a href="simulation.html">Simulation</a>
+                <a href="exams.html">Exams</a>
+            </div>
+            <div>
+                <strong>Navigation</strong>
+                <a href="student-dashboard.html">Dashboard</a>
+                <a href="tutorial.html">Tutorial</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="impulselearn.js"></script>
+    <script>
+        // Track lesson progress
+        function completeLesson(lessonId) {
+            if (!AppState.completedMissions.includes(lessonId)) {
+                AppState.completedMissions.push(lessonId);
+                saveUserProgress();
+                addXP(50);
+                updateLessonProgress();
+                showNotification('🎉 Lesson Complete! +50 XP', 'success');
+                
+                // Visual feedback
+                const lesson = document.getElementById(lessonId);
+                lesson.style.borderColor = 'rgba(0, 184, 148, 0.5)';
+                lesson.style.background = 'rgba(0, 184, 148, 0.05)';
+            }
+        }
+
+        function updateLessonProgress() {
+            const totalLessons = 5;
+            const completed = AppState.completedMissions.filter(m => m.startsWith('lesson')).length;
+            const percentage = (completed / totalLessons) * 100;
+            
+            const progressBar = document.getElementById('lessonProgress');
+            if (progressBar) {
+                progressBar.style.width = percentage + '%';
+            }
+            
+            const progressText = document.getElementById('lessonProgressText');
+            if (progressText) {
+                progressText.textContent = `${completed}/${totalLessons} Lessons Completed`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateLessonProgress();
+            
+            // Mark completed lessons
+            AppState.completedMissions.forEach(missionId => {
+                if (missionId.startsWith('lesson')) {
+                    const lesson = document.getElementById(missionId);
+                    if (lesson) {
+                        lesson.style.borderColor = 'rgba(0, 184, 148, 0.5)';
+                        lesson.style.background = 'rgba(0, 184, 148, 0.05)';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

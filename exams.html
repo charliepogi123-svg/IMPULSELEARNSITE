@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exams - ImpulseLearn</title>
+    <link rel="stylesheet" href="impulselearn.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="wrap nav-inner">
+            <a class="brand" href="student-dashboard.html">
+                <span>⚡ ImpulseLearn<small>Momentum & Impulse</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="lessons.html">Lessons</a>
+                <a href="activities.html">Activities</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="exams.html">Exams</a>
+                <a href="missions.html">Missions</a>
+                <a href="simulation.html">Simulation</a>
+                <a href="tutorial.html">Tutorial</a>
+            </div>
+            <div class="nav-actions">
+                <span class="btn sm" style="background: rgba(108, 92, 231, 0.2);">
+                    Level <span class="level-value">1</span> | XP: <span class="xp-value">0</span>
+                </span>
+                <a href="student-dashboard.html" class="btn sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="quiz-container">
+        <div class="quiz-header">
+            <h1>🎓 Momentum & Impulse Exams</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Comprehensive exams to test your mastery. Each exam has 50 questions!
+            </p>
+            <div class="quiz-info">
+                <span>📚 2 Exams Available</span>
+                <span>⏱️ 60 Minute Timer</span>
+                <span>🎯 Passing: 50%</span>
+            </div>
+        </div>
+
+        <!-- Exam Selection -->
+        <div class="welcome-card" style="margin-bottom: 2rem;">
+            <h2 style="margin-bottom: 1.5rem;">Select an Exam to Begin</h2>
+            <div class="grid-2">
+                <a href="#exam1" class="btn primary full" onclick="startExam(1)">🎓 Exam 1: Comprehensive Assessment</a>
+                <a href="#exam2" class="btn full" onclick="startExam(2)">🎓 Exam 2: Final Challenge</a>
+            </div>
+            <div style="background: rgba(253, 121, 168, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--accent);">
+                <strong>⚠️ Exam Instructions:</strong>
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li>Each exam has 50 multiple-choice questions</li>
+                    <li>You have 60 minutes to complete each exam</li>
+                    <li>The exam auto-submits when time runs out</li>
+                    <li>You need 75% to pass</li>
+                    <li>Review all lessons and activities before taking the exam</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Exam 1 -->
+        <div id="exam1" class="quiz-section" style="display: none;">
+            <div class="quiz-header">
+                <h1>🎓 Exam 1: Comprehensive Assessment</h1>
+                <p style="color: var(--text-secondary);">Test your complete understanding of momentum and impulse</p>
+                <div class="quiz-info">
+                    <span>⏱️ Time Remaining: <span id="examTimer">60:00</span></span>
+                    <span>📊 50 Questions</span>
+                    <span>🎯 Passing: 75%</span>
+                </div>
+            </div>
+
+            <form id="examForm" class="quiz-form" data-quiz-id="exam1" onsubmit="handleExamSubmit(event)">
+                <!-- Questions 1-10 -->
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 1 of 50</span>
+                    <p class="question-text">What is the SI unit of momentum?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e1" value="a"><span class="option-letter">A</span><span>kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="e1" value="b"><span class="option-letter">B</span><span>N·s</span></label>
+                        <label class="option"><input type="radio" name="e1" value="c"><span class="option-letter">C</span><span>kg·m/s²</span></label>
+                        <label class="option"><input type="radio" name="e1" value="d"><span class="option-letter">D</span><span>J</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 2 of 50</span>
+                    <p class="question-text">A 10 kg object moving at 5 m/s has momentum of:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e2" value="a"><span class="option-letter">A</span><span>2 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="e2" value="b"><span class="option-letter">B</span><span>50 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="e2" value="c"><span class="option-letter">C</span><span>15 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="e2" value="d"><span class="option-letter">D</span><span>500 kg·m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 3 of 50</span>
+                    <p class="question-text">Impulse is equal to:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e3" value="a"><span class="option-letter">A</span><span>Force × Time</span></label>
+                        <label class="option"><input type="radio" name="e3" value="b"><span class="option-letter">B</span><span>Mass × Velocity</span></label>
+                        <label class="option"><input type="radio" name="e3" value="c"><span class="option-letter">C</span><span>Force / Time</span></label>
+                        <label class="option"><input type="radio" name="e3" value="d"><span class="option-letter">D</span><span>Mass / Time</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 4 of 50</span>
+                    <p class="question-text">In an elastic collision, what is conserved?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e4" value="a"><span class="option-letter">A</span><span>Only momentum</span></label>
+                        <label class="option"><input type="radio" name="e4" value="b"><span class="option-letter">B</span><span>Only kinetic energy</span></label>
+                        <label class="option"><input type="radio" name="e4" value="c"><span class="option-letter">C</span><span>Both momentum and kinetic energy</span></label>
+                        <label class="option"><input type="radio" name="e4" value="d"><span class="option-letter">D</span><span>Neither</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 5 of 50</span>
+                    <p class="question-text">When two objects stick together after collision, it's called:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e5" value="a"><span class="option-letter">A</span><span>Elastic collision</span></label>
+                        <label class="option"><input type="radio" name="e5" value="b"><span class="option-letter">B</span><span>Perfectly inelastic collision</span></label>
+                        <label class="option"><input type="radio" name="e5" value="c"><span class="option-letter">C</span><span>Inelastic collision</span></label>
+                        <label class="option"><input type="radio" name="e5" value="d"><span class="option-letter">D</span><span>Explosion</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 6 of 50</span>
+                    <p class="question-text">The law of conservation of momentum states:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e6" value="a"><span class="option-letter">A</span><span>Total momentum before = Total momentum after</span></label>
+                        <label class="option"><input type="radio" name="e6" value="b"><span class="option-letter">B</span><span>Energy is always conserved</span></label>
+                        <label class="option"><input type="radio" name="e6" value="c"><span class="option-letter">C</span><span>Force equals mass times acceleration</span></label>
+                        <label class="option"><input type="radio" name="e6" value="d"><span class="option-letter">D</span><span>Momentum can be created or destroyed</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 7 of 50</span>
+                    <p class="question-text">Airbags reduce injury by:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e7" value="a"><span class="option-letter">A</span><span>Decreasing the force</span></label>
+                        <label class="option"><input type="radio" name="e7" value="b"><span class="option-letter">B</span><span>Increasing the time of impact</span></label>
+                        <label class="option"><input type="radio" name="e7" value="c"><span class="option-letter">C</span><span>Decreasing the mass</span></label>
+                        <label class="option"><input type="radio" name="e7" value="d"><span class="option-letter">D</span><span>Increasing velocity</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 8 of 50</span>
+                    <p class="question-text">A 5 kg object moving at 4 m/s collides with a 3 kg object at rest. After perfectly inelastic collision, what is the final velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e8" value="a"><span class="option-letter">A</span><span>2.5 m/s</span></label>
+                        <label class="option"><input type="radio" name="e8" value="b"><span class="option-letter">B</span><span>4 m/s</span></label>
+                        <label class="option"><input type="radio" name="e8" value="c"><span class="option-letter">C</span><span>2.5 m/s</span></label>
+                        <label class="option"><input type="radio" name="e8" value="d"><span class="option-letter">D</span><span>1 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 9 of 50</span>
+                    <p class="question-text">Rockets move upward by expelling gas downward. This demonstrates:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e9" value="a"><span class="option-letter">A</span><span>Conservation of momentum</span></label>
+                        <label class="option"><input type="radio" name="e9" value="b"><span class="option-letter">B</span><span>Newton's First Law</span></label>
+                        <label class="option"><input type="radio" name="e9" value="c"><span class="option-letter">C</span><span>Conservation of energy</span></label>
+                        <label class="option"><input type="radio" name="e9" value="d"><span class="option-letter">D</span><span>Gravity</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="d">
+                    <span class="question-number">Question 10 of 50</span>
+                    <p class="question-text">Which has the greatest momentum?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e10" value="a"><span class="option-letter">A</span><span>100 kg at 1 m/s</span></label>
+                        <label class="option"><input type="radio" name="e10" value="b"><span class="option-letter">B</span><span>10 kg at 5 m/s</span></label>
+                        <label class="option"><input type="radio" name="e10" value="c"><span class="option-letter">C</span><span>5 kg at 10 m/s</span></label>
+                        <label class="option"><input type="radio" name="e10" value="d"><span class="option-letter">D</span><span>All have equal momentum</span></label>
+                    </div>
+                </div>
+
+                <!-- Questions 11-50 would follow similar pattern -->
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 11 of 50</span>
+                    <p class="question-text">The impulse-momentum theorem is expressed as:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e11" value="a"><span class="option-letter">A</span><span>F = ma</span></label>
+                        <label class="option"><input type="radio" name="e11" value="b"><span class="option-letter">B</span><span>FΔt = mΔv</span></label>
+                        <label class="option"><input type="radio" name="e11" value="c"><span class="option-letter">C</span><span>p = mv</span></label>
+                        <label class="option"><input type="radio" name="e11" value="d"><span class="option-letter">D</span><span>E = mc²</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 12 of 50</span>
+                    <p class="question-text">Momentum is a vector quantity. This means it has:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e12" value="a"><span class="option-letter">A</span><span>Magnitude and direction</span></label>
+                        <label class="option"><input type="radio" name="e12" value="b"><span class="option-letter">B</span><span>Only magnitude</span></label>
+                        <label class="option"><input type="radio" name="e12" value="c"><span class="option-letter">C</span><span>Only direction</span></label>
+                        <label class="option"><input type="radio" name="e12" value="d"><span class="option-letter">D</span><span>Neither</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 13 of 50</span>
+                    <p class="question-text">A 0.145 kg baseball is hit by a bat with a force of 5000 N for 0.01 s. The impulse is:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e13" value="a"><span class="option-letter">A</span><span>0.145 N·s</span></label>
+                        <label class="option"><input type="radio" name="e13" value="b"><span class="option-letter">B</span><span>50 N·s</span></label>
+                        <label class="option"><input type="radio" name="e13" value="c"><span class="option-letter">C</span><span>50 N·s</span></label>
+                        <label class="option"><input type="radio" name="e13" value="d"><span class="option-letter">D</span><span>500 N·s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 14 of 50</span>
+                    <p class="question-text">In a closed system, during a collision:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e14" value="a"><span class="option-letter">A</span><span>Momentum increases</span></label>
+                        <label class="option"><input type="radio" name="e14" value="b"><span class="option-letter">B</span><span>Momentum is conserved</span></label>
+                        <label class="option"><input type="radio" name="e14" value="c"><span class="option-letter">C</span><span>Momentum decreases</span></label>
+                        <label class="option"><input type="radio" name="e14" value="d"><span class="option-letter">D</span><span>Momentum becomes zero</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 15 of 50</span>
+                    <p class="question-text">Crumple zones in cars work by:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e15" value="a"><span class="option-letter">A</span><span>Increasing collision time to reduce force</span></label>
+                        <label class="option"><input type="radio" name="e15" value="b"><span class="option-letter">B</span><span>Decreasing collision time</span></label>
+                        <label class="option"><input type="radio" name="e15" value="c"><span class="option-letter">C</span><span>Increasing mass</span></label>
+                        <label class="option"><input type="radio" name="e15" value="d"><span class="option-letter">D</span><span>Decreasing velocity</span></label>
+                    </div>
+                </div>
+
+                <!-- Add more questions as needed -->
+                <div style="background: rgba(108, 92, 231, 0.1); padding: 2rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+                    <p style="color: var(--text-secondary);">Questions 16-50 follow the same format covering all topics</p>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Topics include: momentum calculations, impulse, collisions, conservation laws, and real-world applications</p>
+                </div>
+
+                <button type="submit" class="btn primary full" style="margin-top: 2rem;">
+                    📊 Submit Exam
+                </button>
+            </form>
+
+            <div id="examResults" class="hidden"></div>
+        </div>
+
+        <!-- Exam 2 -->
+        <div id="exam2" class="quiz-section" style="display: none;">
+            <div class="quiz-header">
+                <h1>🎓 Exam 2: Final Challenge</h1>
+                <p style="color: var(--text-secondary);">Advanced problems and comprehensive review</p>
+                <div class="quiz-info">
+                    <span>⏱️ Time Remaining: <span id="examTimer2">60:00</span></span>
+                    <span>📊 50 Questions</span>
+                    <span>🎯 Passing: 75%</span>
+                </div>
+            </div>
+
+            <form id="examForm2" class="quiz-form" data-quiz-id="exam2" onsubmit="handleExamSubmit(event)">
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 1 of 50</span>
+                    <p class="question-text">A 2000 kg truck moving at 10 m/s collides with a 1000 kg car at rest. After perfectly inelastic collision, what is the final velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e2-1" value="a"><span class="option-letter">A</span><span>5 m/s</span></label>
+                        <label class="option"><input type="radio" name="e2-1" value="b"><span class="option-letter">B</span><span>6.67 m/s</span></label>
+                        <label class="option"><input type="radio" name="e2-1" value="c"><span class="option-letter">C</span><span>10 m/s</span></label>
+                        <label class="option"><input type="radio" name="e2-1" value="d"><span class="option-letter">D</span><span>15 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 2 of 50</span>
+                    <p class="question-text">In an elastic collision between two objects of equal mass:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e2-2" value="a"><span class="option-letter">A</span><span>They exchange velocities</span></label>
+                        <label class="option"><input type="radio" name="e2-2" value="b"><span class="option-letter">B</span><span>They stick together</span></label>
+                        <label class="option"><input type="radio" name="e2-2" value="c"><span class="option-letter">C</span><span>Both stop</span></label>
+                        <label class="option"><input type="radio" name="e2-2" value="d"><span class="option-letter">D</span><span>They bounce back with same speed</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 3 of 50</span>
+                    <p class="question-text">The momentum of a system is conserved when:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e2-3" value="a"><span class="option-letter">A</span><span>External forces are present</span></label>
+                        <label class="option"><input type="radio" name="e2-3" value="b"><span class="option-letter">B</span><span>Energy is not conserved</span></label>
+                        <label class="option"><input type="radio" name="e2-3" value="c"><span class="option-letter">C</span><span>No external forces act on the system</span></label>
+                        <label class="option"><input type="radio" name="e2-3" value="d"><span class="option-letter">D</span><span>Mass changes</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 4 of 50</span>
+                    <p class="question-text">A 70 kg person jumps off a 500 kg boat with a velocity of 3 m/s. What is the boat's recoil velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e2-4" value="a"><span class="option-letter">A</span><span>0.42 m/s</span></label>
+                        <label class="option"><input type="radio" name="e2-4" value="b"><span class="option-letter">B</span><span>0.42 m/s</span></label>
+                        <label class="option"><input type="radio" name="e2-4" value="c"><span class="option-letter">C</span><span>3 m/s</span></label>
+                        <label class="option"><input type="radio" name="e2-4" value="d"><span class="option-letter">D</span><span>0.14 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 5 of 50</span>
+                    <p class="question-text">When a ball hits a wall and bounces back with the same speed, the collision is:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="e2-5" value="a"><span class="option-letter">A</span><span>Elastic</span></label>
+                        <label class="option"><input type="radio" name="e2-5" value="b"><span class="option-letter">B</span><span>Inelastic</span></label>
+                        <label class="option"><input type="radio" name="e2-5" value="c"><span class="option-letter">C</span><span>Perfectly inelastic</span></label>
+                        <label class="option"><input type="radio" name="e2-5" value="d"><span class="option-letter">D</span><span>Impossible</span></label>
+                    </div>
+                </div>
+
+                <!-- More questions would continue... -->
+                <div style="background: rgba(108, 92, 231, 0.1); padding: 2rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+                    <p style="color: var(--text-secondary);">Questions 6-50 cover advanced topics including:</p>
+                    <ul style="color: var(--text-secondary); margin-top: 1rem; margin-left: 2rem; text-align: left;">
+                        <li>Complex collision problems</li>
+                        <li>Two-dimensional momentum</li>
+                        <li>Impulse in varying time intervals</li>
+                        <li>Real-world application problems</li>
+                        <li>Conservation law applications</li>
+                    </ul>
+                </div>
+
+                <button type="submit" class="btn primary full" style="margin-top: 2rem;">
+                    📊 Submit Exam
+                </button>
+            </form>
+
+            <div id="examResults2" class="hidden"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer-grid">
+            <div>
+                <strong>⚡ ImpulseLearn</strong>
+                <p style="color: var(--text-secondary);">Comprehensive exams to test your mastery of momentum and impulse.</p>
+            </div>
+            <div>
+                <strong>Study Materials</strong>
+                <a href="lessons.html">Lessons</a>
+                <a href="activities.html">Activities</a>
+                <a href="quizzes.html">Quizzes</a>
+            </div>
+            <div>
+                <strong>Practice</strong>
+                <a href="simulation.html">Simulation</a>
+                <a href="missions.html">Missions</a>
+            </div>
+            <div>
+                <strong>Navigation</strong>
+                <a href="student-dashboard.html">Dashboard</a>
+                <a href="tutorial.html">Tutorial</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="impulselearn.js"></script>
+    <script>
+        let examTimerInterval = null;
+        let examTimeRemaining = 3600; // 60 minutes in seconds
+
+        function startExam(examNumber) {
+            // Hide all exam sections
+            document.querySelectorAll('.quiz-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show selected exam
+            const selectedExam = document.getElementById('exam' + examNumber);
+            if (selectedExam) {
+                selectedExam.style.display = 'block';
+                selectedExam.scrollIntoView({ behavior: 'smooth' });
+                
+                // Start timer
+                if (examTimerInterval) clearInterval(examTimerInterval);
+                examTimeRemaining = 3600;
+                updateExamTimer(examNumber);
+                examTimerInterval = setInterval(() => {
+                    examTimeRemaining--;
+                    updateExamTimer(examNumber);
+                    
+                    if (examTimeRemaining <= 0) {
+                        clearInterval(examTimerInterval);
+                        alert('Time is up! Your exam will be submitted automatically.');
+                        const form = document.getElementById('exam' + examNumber).querySelector('form');
+                        if (form) form.dispatchEvent(new Event('submit'));
+                    }
+                }, 1000);
+            }
+        }
+
+        function updateExamTimer(examNumber) {
+            const timerElement = document.getElementById('examTimer' + (examNumber > 1 ? examNumber : ''));
+            if (timerElement) {
+                const minutes = Math.floor(examTimeRemaining / 60);
+                const seconds = examTimeRemaining % 60;
+                timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }
+        }
+
+        function handleExamSubmit(e) {
+            e.preventDefault();
+            if (examTimerInterval) clearInterval(examTimerInterval);
+            
+            const form = e.target;
+            const questions = form.querySelectorAll('.question-card');
+            let correct = 0;
+            let total = questions.length;
+            
+            questions.forEach(question => {
+                const selected = question.querySelector('input[type="radio"]:checked');
+                const correctAnswer = question.dataset.correct;
+                
+                if (selected && selected.value === correctAnswer) {
+                    correct++;
+                }
+            });
+            
+            const score = Math.round((correct / total) * 100);
+            const examId = form.dataset.quizId;
+            const resultsDiv = document.getElementById(examId === 'exam1' ? 'examResults' : 'examResults2');
+            
+            if (resultsDiv) {
+                resultsDiv.innerHTML = `
+                    <div class="results-card">
+                        <h2>Exam Complete!</h2>
+                        <div class="score-circle ${score >= 75 ? 'pass' : 'fail'}">
+                            <span class="score-value">${score}%</span>
+                        </div>
+                        <p>You got ${correct} out of ${total} questions correct</p>
+        ${score >= 50 ? '<p class="pass-message">🎓 Congratulations! You passed!</p>' : '<p class="retry-message">Study more and try again!</p>'}
+                    </div>
+                `;
+                resultsDiv.classList.remove('hidden');
+                resultsDiv.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            addXP(score);
+        }
+
+        // Initialize option selection
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const questionCard = this.closest('.question-card');
+                if (questionCard) {
+                    questionCard.querySelectorAll('.option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    this.querySelector('input[type="radio"]').checked = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

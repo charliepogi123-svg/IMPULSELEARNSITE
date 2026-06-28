@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - ImpulseLearn</title>
+    <link rel="stylesheet" href="impulselearn.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="wrap nav-inner">
+            <a class="brand" href="teacher-dashboard.html">
+                <span>⚡ ImpulseLearn<small>Teacher Dashboard</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="admin.html">Admin Panel</a>
+            </div>
+            <div class="nav-actions">
+                <span class="btn sm" style="background: rgba(108, 92, 231, 0.2);">
+                    👨‍🏫 Admin Mode
+                </span>
+                <a href="index.html" class="btn sm" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <div class="wrap">
+            <div class="dashboard-header">
+                <div>
+                    <h1>Teacher Dashboard 👨‍🏫</h1>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Manage and monitor student progress</p>
+                </div>
+            </div>
+
+            <!-- Admin Stats -->
+            <div class="welcome-card">
+                <h2>📊 Class Overview</h2>
+                <div class="grid-3" style="margin-top: 1.5rem;">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-value" id="totalStudents">0</div>
+                        <div class="stat-label">Total Students</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-value" id="approvedStudents">0</div>
+                        <div class="stat-label">Approved Students</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏳</div>
+                        <div class="stat-value" id="pendingStudents">0</div>
+                        <div class="stat-label">Pending Approval</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pending Approvals -->
+            <div class="welcome-card" id="approvalSection">
+                <h2>⏳ Pending Student Approvals</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Review and approve new student registrations</p>
+                <div id="pendingList">
+                    <p style="color: var(--text-secondary);">No pending approvals</p>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="welcome-card">
+                <h2>🎯 Quick Actions</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Manage your class</p>
+                <div class="grid-4">
+                    <a href="admin.html" class="btn primary full">� View All Grades</a>
+                    <button class="btn full" onclick="changeTeacherPassword()">🔑 Change Password</button>
+                </div>
+            </div>
+
+            <!-- Student Performance -->
+            <div class="welcome-card">
+                <h2>👥 Student Performance</h2>
+                <div style="margin-top: 1rem; overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid rgba(108, 92, 231, 0.3);">
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Student Name</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Email</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Level</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">XP</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Quizzes</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Exams</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Missions</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Status</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody" style="color: var(--text-secondary);">
+                            <tr>
+                                <td colspan="8" style="padding: 2rem; text-align: center;">Loading student data...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Leaderboard -->
+            <div class="welcome-card">
+                <h2>🏆 Leaderboard - Top Students</h2>
+                <div style="margin-top: 1rem; overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid rgba(108, 92, 231, 0.3);">
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Rank</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Student</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Level</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">XP</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Missions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                            <tr>
+                                <td colspan="5" style="padding: 2rem; text-align: center;">Loading leaderboard...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer-grid">
+            <div>
+                <strong>⚡ ImpulseLearn</strong>
+                <p style="color: var(--text-secondary);">Teacher Dashboard - Monitor and manage student learning progress.</p>
+            </div>
+            <div>
+                <strong>Content</strong>
+                <a href="lessons.html">Lessons</a>
+                <a href="activities.html">Activities</a>
+                <a href="quizzes.html">Quizzes</a>
+            </div>
+            <div>
+                <strong>Assessment</strong>
+                <a href="exams.html">Exams</a>
+                <a href="missions.html">Missions</a>
+                <a href="simulation.html">Simulation</a>
+            </div>
+            <div>
+                <strong>Support</strong>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="impulselearn.js"></script>
+    <script>
+        // Load real data on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTeacherDashboard();
+        });
+
+        function loadTeacherDashboard() {
+            const users = DB.getUsers().filter(u => u.role === 'student');
+            const approved = users.filter(u => u.approved);
+            const pending = users.filter(u => !u.approved);
+            
+            // Update stats
+            document.getElementById('totalStudents').textContent = users.length;
+            document.getElementById('approvedStudents').textContent = approved.length;
+            document.getElementById('pendingStudents').textContent = pending.length;
+            
+            // Load pending approvals
+            loadPendingApprovals(pending);
+            
+            // Load student table
+            loadStudentTable(approved);
+            
+            // Load leaderboard
+            updateLeaderboard();
+        }
+
+        function loadPendingApprovals(pending) {
+            const pendingList = document.getElementById('pendingList');
+            const approvalSection = document.getElementById('approvalSection');
+            
+            if (pending.length === 0) {
+                pendingList.innerHTML = '<p style="color: var(--text-secondary);">No pending approvals</p>';
+                return;
+            }
+            
+            pendingList.innerHTML = pending.map(user => `
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(108, 92, 231, 0.1); border-radius: 8px; margin-bottom: 1rem;">
+                    <div>
+                        <strong style="color: var(--primary);">${user.fullName}</strong>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">${user.email}</p>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Registered: ${new Date(user.registeredAt).toLocaleDateString()}</p>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn primary sm" onclick="approveStudent(${user.id})">✓ Approve</button>
+                        <button class="btn sm" onclick="rejectStudent(${user.id})">✗ Reject</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadStudentTable(students) {
+            const tbody = document.getElementById('studentTableBody');
+            
+            if (students.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" style="padding: 2rem; text-align: center;">No approved students yet</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = students.map(student => {
+                const quizCount = Object.keys(student.quizScores || {}).length;
+                const examCount = Object.keys(student.examScores || {}).length;
+                const missionCount = (student.completedMissions || []).filter(m => m.startsWith('mission')).length;
+                
+                return `
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem;"><strong>${student.fullName}</strong></td>
+                        <td style="padding: 1rem;">${student.email}</td>
+                        <td style="padding: 1rem;">${student.level || 1}</td>
+                        <td style="padding: 1rem;">${student.xp || 0}</td>
+                        <td style="padding: 1rem;">${quizCount}/5</td>
+                        <td style="padding: 1rem;">${examCount}/2</td>
+                        <td style="padding: 1rem;">${missionCount}/8</td>
+                        <td style="padding: 1rem;">
+                            <span style="color: var(--success);">✓ Approved</span>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function approveStudent(userId) {
+            if (DB.approveUser(userId)) {
+                showNotification('Student approved successfully!', 'success');
+                loadTeacherDashboard();
+            } else {
+                showNotification('Error approving student', 'error');
+            }
+        }
+
+        function rejectStudent(userId) {
+            const users = DB.getUsers();
+            const filteredUsers = users.filter(u => u.id !== userId);
+            DB.saveUsers(filteredUsers);
+            showNotification('Student registration rejected', 'info');
+            loadTeacherDashboard();
+        }
+
+        function updateLeaderboard() {
+            const users = DB.getUsers().filter(u => u.role === 'student' && u.approved);
+            const leaderboard = users
+                .map(user => ({
+                    name: user.fullName,
+                    level: user.level || 1,
+                    xp: user.xp || 0,
+                    missions: (user.completedMissions || []).filter(m => m.startsWith('mission')).length
+                }))
+                .sort((a, b) => b.xp - a.xp)
+                .slice(0, 10);
+            
+            const tbody = document.getElementById('leaderboardBody');
+            if (tbody) {
+                tbody.innerHTML = leaderboard.map((user, index) => `
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem;">${index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}th`}</td>
+                        <td style="padding: 1rem;">${user.name}</td>
+                        <td style="padding: 1rem;">${user.level}</td>
+                        <td style="padding: 1rem;">${user.xp} XP</td>
+                        <td style="padding: 1rem;">${user.missions}/8</td>
+                    </tr>
+                `).join('');
+            }
+        }
+    </script>
+</body>
+</html>

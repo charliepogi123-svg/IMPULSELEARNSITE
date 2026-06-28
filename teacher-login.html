@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login - ImpulseLearn</title>
+    <link rel="stylesheet" href="impulselearn.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>👨‍🏫 Teacher Portal</h1>
+            <p class="subtitle">Admin access only</p>
+            
+            <form id="teacherLoginForm" class="auth-form" onsubmit="loginTeacher(event)">
+                <div class="form-group">
+                    <label for="teacherUsername">Username</label>
+                    <input type="text" id="teacherUsername" name="username" placeholder="Enter username" required autocomplete="username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="teacherPassword">Password</label>
+                    <input type="password" id="teacherPassword" name="password" placeholder="Enter password" required autocomplete="current-password">
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    � Login as Teacher
+                </button>
+                
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                    Default: admin / admin123
+                </p>
+            </form>
+            
+            <div class="login-footer">
+                <p><a href="index.html">← Back to Role Selection</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="impulselearn.js"></script>
+</body>
+</html>

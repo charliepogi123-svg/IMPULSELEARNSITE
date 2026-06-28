@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes - ImpulseLearn</title>
+    <link rel="stylesheet" href="impulselearn.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="wrap nav-inner">
+            <a class="brand" href="student-dashboard.html">
+                <span>⚡ ImpulseLearn<small>Momentum & Impulse</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="lessons.html">Lessons</a>
+                <a href="activities.html">Activities</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="exams.html">Exams</a>
+                <a href="missions.html">Missions</a>
+                <a href="simulation.html">Simulation</a>
+                <a href="tutorial.html">Tutorial</a>
+            </div>
+            <div class="nav-actions">
+                <span class="btn sm" style="background: rgba(108, 92, 231, 0.2);">
+                    Level <span class="level-value">1</span> | XP: <span class="xp-value">0</span>
+                </span>
+                <a href="student-dashboard.html" class="btn sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="quiz-container">
+        <div class="quiz-header">
+            <h1>📝 Momentum & Impulse Quizzes</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                Test your knowledge with 5 comprehensive quizzes. Each quiz has 20 questions!
+            </p>
+            <div class="quiz-info">
+                <span>📚 5 Quizzes Available</span>
+                <span>❓ 20 Questions Each</span>
+                <span>⭐ Auto-graded</span>
+            </div>
+        </div>
+
+        <!-- Quiz Selection -->
+        <div class="welcome-card" style="margin-bottom: 2rem;">
+            <h2 style="margin-bottom: 1.5rem;">Select a Quiz to Begin</h2>
+            <div class="grid-2">
+                <button id="quiz1Btn" class="btn primary full" onclick="startQuiz(1)">📝 Quiz 1: Basics of Momentum</button>
+                <button id="quiz2Btn" class="btn full" onclick="startQuiz(2)">� Quiz 2: Understanding Impulse</button>
+                <button id="quiz3Btn" class="btn full" onclick="startQuiz(3)">� Quiz 3: Momentum-Impulse Relationship</button>
+                <button id="quiz4Btn" class="btn full" onclick="startQuiz(4)">� Quiz 4: Conservation Laws</button>
+                <button id="quiz5Btn" class="btn full" onclick="startQuiz(5)">� Quiz 5: Real-World Applications</button>
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;">
+                💡 All quizzes are now available! No requirements needed.
+            </p>
+        </div>
+
+        <!-- Quiz 1 -->
+        <div id="quiz1" class="quiz-section" style="display: none;">
+            <div class="quiz-header">
+                <h1>📝 Quiz 1: Basics of Momentum</h1>
+                <p style="color: var(--text-secondary);">Test your understanding of momentum fundamentals</p>
+                <div class="quiz-info">
+                    <span>⏱️ No Time Limit</span>
+                    <span>📊 20 Questions</span>
+                <span>🎯 Passing: 50%</span>
+                </div>
+            </div>
+
+            <form class="quiz-form" data-quiz-id="quiz1" onsubmit="handleQuizSubmit(event)">
+                <!-- Question 1 -->
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 1 of 20</span>
+                    <p class="question-text">What is the formula for momentum?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q1" value="a">
+                            <span class="option-letter">A</span>
+                            <span>p = m × v</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="b">
+                            <span class="option-letter">B</span>
+                            <span>p = m + v</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="c">
+                            <span class="option-letter">C</span>
+                            <span>p = m / v</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="d">
+                            <span class="option-letter">D</span>
+                            <span>p = v / m</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 2 of 20</span>
+                    <p class="question-text">What are the SI units of momentum?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q2" value="a">
+                            <span class="option-letter">A</span>
+                            <span>kg·m/s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="b">
+                            <span class="option-letter">B</span>
+                            <span>N·s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="c">
+                            <span class="option-letter">C</span>
+                            <span>kg·m/s²</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="d">
+                            <span class="option-letter">D</span>
+                            <span>m/s</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 3 of 20</span>
+                    <p class="question-text">Momentum is a vector quantity. What does this mean?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q3" value="a">
+                            <span class="option-letter">A</span>
+                            <span>It has both magnitude and direction</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="b">
+                            <span class="option-letter">B</span>
+                            <span>It only has magnitude</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="c">
+                            <span class="option-letter">C</span>
+                            <span>It only has direction</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="d">
+                            <span class="option-letter">D</span>
+                            <span>It has neither magnitude nor direction</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 4 of 20</span>
+                    <p class="question-text">A 2 kg object moving at 3 m/s has what momentum?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q4" value="a">
+                            <span class="option-letter">A</span>
+                            <span>1.5 kg·m/s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="b">
+                            <span class="option-letter">B</span>
+                            <span>5 kg·m/s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="c">
+                            <span class="option-letter">C</span>
+                            <span>6 kg·m/s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="d">
+                            <span class="option-letter">D</span>
+                            <span>8 kg·m/s</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 5 of 20</span>
+                    <p class="question-text">If velocity doubles, what happens to momentum (mass constant)?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q5" value="a">
+                            <span class="option-letter">A</span>
+                            <span>It halves</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q5" value="b">
+                            <span class="option-letter">B</span>
+                            <span>It doubles</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q5" value="c">
+                            <span class="option-letter">C</span>
+                            <span>It quadruples</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q5" value="d">
+                            <span class="option-letter">D</span>
+                            <span>It stays the same</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 6 of 20</span>
+                    <p class="question-text">Which object has greater momentum: 1000 kg car at 10 m/s or 10 kg bike at 50 m/s?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q6" value="a">
+                            <span class="option-letter">A</span>
+                            <span>The car (10,000 kg·m/s)</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q6" value="b">
+                            <span class="option-letter">B</span>
+                            <span>The bike (500 kg·m/s)</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q6" value="c">
+                            <span class="option-letter">C</span>
+                            <span>Both have equal momentum</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q6" value="d">
+                            <span class="option-letter">D</span>
+                            <span>Cannot determine</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 7 of 20</span>
+                    <p class="question-text">What is the momentum of a 5 kg object at rest?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q7" value="a">
+                            <span class="option-letter">A</span>
+                            <span>5 kg·m/s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q7" value="b">
+                            <span class="option-letter">B</span>
+                            <span>0 kg·m/s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q7" value="c">
+                            <span class="option-letter">C</span>
+                            <span>Cannot be determined</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q7" value="d">
+                            <span class="option-letter">D</span>
+                            <span>Infinite</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 8 of 20</span>
+                    <p class="question-text">In a closed system, what happens to total momentum during a collision?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q8" value="a">
+                            <span class="option-letter">A</span>
+                            <span>It increases</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q8" value="b">
+                            <span class="option-letter">B</span>
+                            <span>It stays constant</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q8" value="c">
+                            <span class="option-letter">C</span>
+                            <span>It decreases</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q8" value="d">
+                            <span class="option-letter">D</span>
+                            <span>It becomes zero</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 9 of 20</span>
+                    <p class="question-text">A 3 kg ball moving at 4 m/s collides with a 2 kg ball at rest. What is total initial momentum?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q9" value="a">
+                            <span class="option-letter">A</span>
+                            <span>12 kg·m/s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q9" value="b">
+                            <span class="option-letter">B</span>
+                            <span>6 kg·m/s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q9" value="c">
+                            <span class="option-letter">C</span>
+                            <span>8 kg·m/s</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q9" value="d">
+                            <span class="option-letter">D</span>
+                            <span>5 kg·m/s</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="question-card" data-correct="d">
+                    <span class="question-number">Question 10 of 20</span>
+                    <p class="question-text">Which has more momentum: a truck at 5 m/s or a car at 30 m/s (truck is 10x heavier)?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q10" value="a">
+                            <span class="option-letter">A</span>
+                            <span>The car</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q10" value="b">
+                            <span class="option-letter">B</span>
+                            <span>The truck</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q10" value="c">
+                            <span class="option-letter">C</span>
+                            <span>Both equal</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q10" value="d">
+                            <span class="option-letter">D</span>
+                            <span>Depends on exact masses</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questions 11-20 -->
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 11 of 20</span>
+                    <p class="question-text">When a rocket expels gas downward, the rocket moves upward due to:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q11" value="a"><span class="option-letter">A</span><span>Gravity</span></label>
+                        <label class="option"><input type="radio" name="q11" value="b"><span class="option-letter">B</span><span>Conservation of momentum</span></label>
+                        <label class="option"><input type="radio" name="q11" value="c"><span class="option-letter">C</span><span>Air resistance</span></label>
+                        <label class="option"><input type="radio" name="q11" value="d"><span class="option-letter">D</span><span>Magnetic force</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 12 of 20</span>
+                    <p class="question-text">Impulse is defined as:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q12" value="a"><span class="option-letter">A</span><span>Force × Time</span></label>
+                        <label class="option"><input type="radio" name="q12" value="b"><span class="option-letter">B</span><span>Mass × Velocity</span></label>
+                        <label class="option"><input type="radio" name="q12" value="c"><span class="option-letter">C</span><span>Force / Time</span></label>
+                        <label class="option"><input type="radio" name="q12" value="d"><span class="option-letter">D</span><span>Mass / Time</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 13 of 20</span>
+                    <p class="question-text">The SI unit of impulse is:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q13" value="a"><span class="option-letter">A</span><span>kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q13" value="b"><span class="option-letter">B</span><span>N</span></label>
+                        <label class="option"><input type="radio" name="q13" value="c"><span class="option-letter">C</span><span>N·s</span></label>
+                        <label class="option"><input type="radio" name="q13" value="d"><span class="option-letter">D</span><span>J</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 14 of 20</span>
+                    <p class="question-text">Airbags reduce injury by:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q14" value="a"><span class="option-letter">A</span><span>Decreasing the force</span></label>
+                        <label class="option"><input type="radio" name="q14" value="b"><span class="option-letter">B</span><span>Increasing the time of impact</span></label>
+                        <label class="option"><input type="radio" name="q14" value="c"><span class="option-letter">C</span><span>Decreasing the mass</span></label>
+                        <label class="option"><input type="radio" name="q14" value="d"><span class="option-letter">D</span><span>Increasing velocity</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 15 of 20</span>
+                    <p class="question-text">A 0.5 kg ball moving at 10 m/s has momentum of:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q15" value="a"><span class="option-letter">A</span><span>5 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q15" value="b"><span class="option-letter">B</span><span>20 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q15" value="c"><span class="option-letter">C</span><span>0.05 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q15" value="d"><span class="option-letter">D</span><span>15 kg·m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 16 of 20</span>
+                    <p class="question-text">In an elastic collision, what is conserved?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q16" value="a"><span class="option-letter">A</span><span>Only momentum</span></label>
+                        <label class="option"><input type="radio" name="q16" value="b"><span class="option-letter">B</span><span>Only kinetic energy</span></label>
+                        <label class="option"><input type="radio" name="q16" value="c"><span class="option-letter">C</span><span>Both momentum and kinetic energy</span></label>
+                        <label class="option"><input type="radio" name="q16" value="d"><span class="option-letter">D</span><span>Neither</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 17 of 20</span>
+                    <p class="question-text">When two objects stick together after collision, it's called:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q17" value="a"><span class="option-letter">A</span><span>Elastic collision</span></label>
+                        <label class="option"><input type="radio" name="q17" value="b"><span class="option-letter">B</span><span>Perfectly inelastic collision</span></label>
+                        <label class="option"><input type="radio" name="q17" value="c"><span class="option-letter">C</span><span>Inelastic collision</span></label>
+                        <label class="option"><input type="radio" name="q17" value="d"><span class="option-letter">D</span><span>Explosion</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 18 of 20</span>
+                    <p class="question-text">The impulse-momentum theorem states:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q18" value="a"><span class="option-letter">A</span><span>Impulse equals change in momentum</span></label>
+                        <label class="option"><input type="radio" name="q18" value="b"><span class="option-letter">B</span><span>Force equals mass times acceleration</span></label>
+                        <label class="option"><input type="radio" name="q18" value="c"><span class="option-letter">C</span><span>Energy is conserved</span></label>
+                        <label class="option"><input type="radio" name="q18" value="d"><span class="option-letter">D</span><span>Momentum equals force</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="d">
+                    <span class="question-number">Question 19 of 20</span>
+                    <p class="question-text">A 70 kg person running at 5 m/s has momentum of:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q19" value="a"><span class="option-letter">A</span><span>14 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q19" value="b"><span class="option-letter">B</span><span>75 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q19" value="c"><span class="option-letter">C</span><span>350 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q19" value="d"><span class="option-letter">D</span><span>350 kg·m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 20 of 20</span>
+                    <p class="question-text">Which safety device works by increasing the time of impact?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q20" value="a"><span class="option-letter">A</span><span>Helmet</span></label>
+                        <label class="option"><input type="radio" name="q20" value="b"><span class="option-letter">B</span><span>Airbag</span></label>
+                        <label class="option"><input type="radio" name="q20" value="c"><span class="option-letter">C</span><span>Both A and B</span></label>
+                        <label class="option"><input type="radio" name="q20" value="d"><span class="option-letter">D</span><span>Neither</span></label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn primary full" style="margin-top: 2rem;">
+                    📊 Submit Quiz
+                </button>
+            </form>
+
+            <div id="quizResults" class="hidden"></div>
+        </div>
+
+        <!-- Quiz 2-5 sections (placeholder for future implementation) -->
+        <div id="quiz2" class="quiz-section" style="display: none;">
+            <div class="quiz-header">
+                <h1>📝 Quiz 2: Understanding Impulse</h1>
+                <p style="color: var(--text-secondary);">Master the concepts of impulse and force-time relationships</p>
+                <div class="quiz-info">
+                    <span>⏱️ No Time Limit</span>
+                    <span>📊 20 Questions</span>
+                    <span>🎯 No Requirements</span>
+                </div>
+            </div>
+
+            <form class="quiz-form" data-quiz-id="quiz2" onsubmit="handleQuizSubmit(event)">
+                <!-- Question 1 -->
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 1 of 20</span>
+                    <p class="question-text">What is the formula for impulse?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-1" value="a"><span class="option-letter">A</span><span>Impulse = Force × Time</span></label>
+                        <label class="option"><input type="radio" name="q2-1" value="b"><span class="option-letter">B</span><span>Impulse = Mass × Velocity</span></label>
+                        <label class="option"><input type="radio" name="q2-1" value="c"><span class="option-letter">C</span><span>Impulse = Force / Time</span></label>
+                        <label class="option"><input type="radio" name="q2-1" value="d"><span class="option-letter">D</span><span>Impulse = Mass / Time</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 2 of 20</span>
+                    <p class="question-text">What are the SI units of impulse?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-2" value="a"><span class="option-letter">A</span><span>kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q2-2" value="b"><span class="option-letter">B</span><span>N·s</span></label>
+                        <label class="option"><input type="radio" name="q2-2" value="c"><span class="option-letter">C</span><span>kg·m/s²</span></label>
+                        <label class="option"><input type="radio" name="q2-2" value="d"><span class="option-letter">D</span><span>J</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 3 of 20</span>
+                    <p class="question-text">Impulse is equal to the change in:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-3" value="a"><span class="option-letter">A</span><span>Momentum</span></label>
+                        <label class="option"><input type="radio" name="q2-3" value="b"><span class="option-letter">B</span><span>Velocity</span></label>
+                        <label class="option"><input type="radio" name="q2-3" value="c"><span class="option-letter">C</span><span>Mass</span></label>
+                        <label class="option"><input type="radio" name="q2-3" value="d"><span class="option-letter">D</span><span>Acceleration</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 4 of 20</span>
+                    <p class="question-text">To reduce the force of impact, you can:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-4" value="a"><span class="option-letter">A</span><span>Decrease the time of impact</span></label>
+                        <label class="option"><input type="radio" name="q2-4" value="b"><span class="option-letter">B</span><span>Increase the time of impact</span></label>
+                        <label class="option"><input type="radio" name="q2-4" value="c"><span class="option-letter">C</span><span>Decrease the mass</span></label>
+                        <label class="option"><input type="radio" name="q2-4" value="d"><span class="option-letter">D</span><span>Increase the velocity</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 5 of 20</span>
+                    <p class="question-text">A 0.2 kg ball moving at 10 m/s is caught and brought to rest in 0.5 seconds. What is the impulse?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-5" value="a"><span class="option-letter">A</span><span>1 N·s</span></label>
+                        <label class="option"><input type="radio" name="q2-5" value="b"><span class="option-letter">B</span><span>2 N·s</span></label>
+                        <label class="option"><input type="radio" name="q2-5" value="c"><span class="option-letter">C</span><span>2 N·s</span></label>
+                        <label class="option"><input type="radio" name="q2-5" value="d"><span class="option-letter">D</span><span>5 N·s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 6 of 20</span>
+                    <p class="question-text">Which safety device increases the time of impact to reduce force?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-6" value="a"><span class="option-letter">A</span><span>Airbag</span></label>
+                        <label class="option"><input type="radio" name="q2-6" value="b"><span class="option-letter">B</span><span>Seatbelt</span></label>
+                        <label class="option"><input type="radio" name="q2-6" value="c"><span class="option-letter">C</span><span>Helmet</span></label>
+                        <label class="option"><input type="radio" name="q2-6" value="d"><span class="option-letter">D</span><span>All of the above</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 7 of 20</span>
+                    <p class="question-text">If the time of impact increases, the force of impact:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-7" value="a"><span class="option-letter">A</span><span>Increases</span></label>
+                        <label class="option"><input type="radio" name="q2-7" value="b"><span class="option-letter">B</span><span>Decreases</span></label>
+                        <label class="option"><input type="radio" name="q2-7" value="c"><span class="option-letter">C</span><span>Stays the same</span></label>
+                        <label class="option"><input type="radio" name="q2-7" value="d"><span class="option-letter">D</span><span>Becomes zero</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 8 of 20</span>
+                    <p class="question-text">A 70 kg person jumps off a 1 m wall. If they bend their knees and take 0.5 seconds to stop, what is the average force? (g = 10 m/s²)</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-8" value="a"><span class="option-letter">A</span><span>700 N</span></label>
+                        <label class="option"><input type="radio" name="q2-8" value="b"><span class="option-letter">B</span><span>1400 N</span></label>
+                        <label class="option"><input type="radio" name="q2-8" value="c"><span class="option-letter">C</span><span>1400 N</span></label>
+                        <label class="option"><input type="radio" name="q2-8" value="d"><span class="option-letter">D</span><span>350 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 9 of 20</span>
+                    <p class="question-text">The impulse-momentum theorem states:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-9" value="a"><span class="option-letter">A</span><span>Impulse equals change in momentum</span></label>
+                        <label class="option"><input type="radio" name="q2-9" value="b"><span class="option-letter">B</span><span>Force equals mass times acceleration</span></label>
+                        <label class="option"><input type="radio" name="q2-9" value="c"><span class="option-letter">C</span><span>Energy is conserved</span></label>
+                        <label class="option"><input type="radio" name="q2-9" value="d"><span class="option-letter">D</span><span>Momentum equals force</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 10 of 20</span>
+                    <p class="question-text">A car crashes and stops in 0.2 seconds. To reduce the force on passengers, the car should have:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-10" value="a"><span class="option-letter">A</span><span>Shorter stopping time</span></label>
+                        <label class="option"><input type="radio" name="q2-10" value="b"><span class="option-letter">B</span><span>Longer stopping time</span></label>
+                        <label class="option"><input type="radio" name="q2-10" value="c"><span class="option-letter">C</span><span>Higher velocity</span></label>
+                        <label class="option"><input type="radio" name="q2-10" value="d"><span class="option-letter">D</span><span>Less mass</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 11 of 20</span>
+                    <p class="question-text">A 500 kg truck moving at 20 m/s crashes and stops in 4 seconds. What is the impulse?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-11" value="a"><span class="option-letter">A</span><span>100 N·s</span></label>
+                        <label class="option"><input type="radio" name="q2-11" value="b"><span class="option-letter">B</span><span>2500 N·s</span></label>
+                        <label class="option"><input type="radio" name="q2-11" value="c"><span class="option-letter">C</span><span>10000 N·s</span></label>
+                        <label class="option"><input type="radio" name="q2-11" value="d"><span class="option-letter">D</span><span>5000 N·s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 12 of 20</span>
+                    <p class="question-text">When you hit a baseball with a bat, the force is large because:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-12" value="a"><span class="option-letter">A</span><span>The time of contact is very short</span></label>
+                        <label class="option"><input type="radio" name="q2-12" value="b"><span class="option-letter">B</span><span>The time of contact is very long</span></label>
+                        <label class="option"><input type="radio" name="q2-12" value="c"><span class="option-letter">C</span><span>The mass is very small</span></label>
+                        <label class="option"><input type="radio" name="q2-12" value="d"><span class="option-letter">D</span><span>The velocity is zero</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 13 of 20</span>
+                    <p class="question-text">A 0.1 kg object experiences a force of 50 N for 0.2 seconds. What is the change in velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-13" value="a"><span class="option-letter">A</span><span>1 m/s</span></label>
+                        <label class="option"><input type="radio" name="q2-13" value="b"><span class="option-letter">B</span><span>100 m/s</span></label>
+                        <label class="option"><input type="radio" name="q2-13" value="c"><span class="option-letter">C</span><span>10 m/s</span></label>
+                        <label class="option"><input type="radio" name="q2-13" value="d"><span class="option-letter">D</span><span>0.1 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 14 of 20</span>
+                    <p class="question-text">Crumple zones in cars work by:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-14" value="a"><span class="option-letter">A</span><span>Decreasing collision time</span></label>
+                        <label class="option"><input type="radio" name="q2-14" value="b"><span class="option-letter">B</span><span>Increasing collision force</span></label>
+                        <label class="option"><input type="radio" name="q2-14" value="c"><span class="option-letter">C</span><span>Increasing collision time</span></label>
+                        <label class="option"><input type="radio" name="q2-14" value="d"><span class="option-letter">D</span><span>Decreasing mass</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 15 of 20</span>
+                    <p class="question-text">A 5 kg object moving at 4 m/s is stopped in 2 seconds. What is the average force?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-15" value="a"><span class="option-letter">A</span><span>10 N</span></label>
+                        <label class="option"><input type="radio" name="q2-15" value="b"><span class="option-letter">B</span><span>20 N</span></label>
+                        <label class="option"><input type="radio" name="q2-15" value="c"><span class="option-letter">C</span><span>40 N</span></label>
+                        <label class="option"><input type="radio" name="q2-15" value="d"><span class="option-letter">D</span><span>80 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 16 of 20</span>
+                    <p class="question-text">When a force is applied for a longer time, the impulse is:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-16" value="a"><span class="option-letter">A</span><span>Smaller</span></label>
+                        <label class="option"><input type="radio" name="q2-16" value="b"><span class="option-letter">B</span><span>Larger</span></label>
+                        <label class="option"><input type="radio" name="q2-16" value="c"><span class="option-letter">C</span><span>Unchanged</span></label>
+                        <label class="option"><input type="radio" name="q2-16" value="d"><span class="option-letter">D</span><span>Zero</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 17 of 20</span>
+                    <p class="question-text">A 0.5 kg ball moving at 8 m/s hits a wall and bounces back at 6 m/s. If contact time is 0.1 seconds, what is the force?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-17" value="a"><span class="option-letter">A</span><span>70 N</span></label>
+                        <label class="option"><input type="radio" name="q2-17" value="b"><span class="option-letter">B</span><span>35 N</span></label>
+                        <label class="option"><input type="radio" name="q2-17" value="c"><span class="option-letter">C</span><span>140 N</span></label>
+                        <label class="option"><input type="radio" name="q2-17" value="d"><span class="option-letter">D</span><span>20 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 18 of 20</span>
+                    <p class="question-text">Which situation demonstrates impulse?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-18" value="a"><span class="option-letter">A</span><span>A book sitting on a table</span></label>
+                        <label class="option"><input type="radio" name="q2-18" value="b"><span class="option-letter">B</span><span>A car moving at constant velocity</span></label>
+                        <label class="option"><input type="radio" name="q2-18" value="c"><span class="option-letter">C</span><span>Kicking a soccer ball</span></label>
+                        <label class="option"><input type="radio" name="q2-18" value="d"><span class="option-letter">D</span><span>Holding a heavy object</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 19 of 20</span>
+                    <p class="question-text">A 2 kg object moving at 5 m/s experiences a force of 10 N for 3 seconds. What is the final velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-19" value="a"><span class="option-letter">A</span><span>5 m/s</span></label>
+                        <label class="option"><input type="radio" name="q2-19" value="b"><span class="option-letter">B</span><span>20 m/s</span></label>
+                        <label class="option"><input type="radio" name="q2-19" value="c"><span class="option-letter">C</span><span>15 m/s</span></label>
+                        <label class="option"><input type="radio" name="q2-19" value="d"><span class="option-letter">D</span><span>10 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 20 of 20</span>
+                    <p class="question-text">The area under a force-time graph represents:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2-20" value="a"><span class="option-letter">A</span><span>Impulse</span></label>
+                        <label class="option"><input type="radio" name="q2-20" value="b"><span class="option-letter">B</span><span>Momentum</span></label>
+                        <label class="option"><input type="radio" name="q2-20" value="c"><span class="option-letter">C</span><span>Energy</span></label>
+                        <label class="option"><input type="radio" name="q2-20" value="d"><span class="option-letter">D</span><span>Power</span></label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn primary full" style="margin-top: 2rem;">
+                    📊 Submit Quiz
+                </button>
+            </form>
+
+            <div id="quizResults" class="hidden"></div>
+        </div>
+
+        <div id="quiz3" class="quiz-section" style="display: none;">
+            <div class="quiz-header">
+                <h1>📝 Quiz 3: Momentum-Impulse Relationship</h1>
+                <p style="color: var(--text-secondary);">Explore the connection between momentum and impulse</p>
+                <div class="quiz-info">
+                    <span>⏱️ No Time Limit</span>
+                    <span>📊 20 Questions</span>
+                    <span>🎯 No Requirements</span>
+                </div>
+            </div>
+
+            <form class="quiz-form" data-quiz-id="quiz3" onsubmit="handleQuizSubmit(event)">
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 1 of 20</span>
+                    <p class="question-text">The impulse-momentum theorem is expressed as:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-1" value="a"><span class="option-letter">A</span><span>F = ma</span></label>
+                        <label class="option"><input type="radio" name="q3-1" value="b"><span class="option-letter">B</span><span>FΔt = mΔv</span></label>
+                        <label class="option"><input type="radio" name="q3-1" value="c"><span class="option-letter">C</span><span>p = mv</span></label>
+                        <label class="option"><input type="radio" name="q3-1" value="d"><span class="option-letter">D</span><span>E = mc²</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 2 of 20</span>
+                    <p class="question-text">If momentum is conserved, then:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-2" value="a"><span class="option-letter">A</span><span>Total momentum before = Total momentum after</span></label>
+                        <label class="option"><input type="radio" name="q3-2" value="b"><span class="option-letter">B</span><span>Velocity is constant</span></label>
+                        <label class="option"><input type="radio" name="q3-2" value="c"><span class="option-letter">C</span><span>Force is zero</span></label>
+                        <label class="option"><input type="radio" name="q3-2" value="d"><span class="option-letter">D</span><span>Mass is constant</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 3 of 20</span>
+                    <p class="question-text">A 3 kg object moving at 4 m/s collides with a 2 kg object at rest. After perfectly inelastic collision, what is the final velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-3" value="a"><span class="option-letter">A</span><span>2.4 m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-3" value="b"><span class="option-letter">B</span><span>4 m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-3" value="c"><span class="option-letter">C</span><span>2.4 m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-3" value="d"><span class="option-letter">D</span><span>1 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 4 of 20</span>
+                    <p class="question-text">In an elastic collision between two objects of equal mass:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-4" value="a"><span class="option-letter">A</span><span>They stick together</span></label>
+                        <label class="option"><input type="radio" name="q3-4" value="b"><span class="option-letter">B</span><span>They exchange velocities</span></label>
+                        <label class="option"><input type="radio" name="q3-4" value="c"><span class="option-letter">C</span><span>Both stop</span></label>
+                        <label class="option"><input type="radio" name="q3-4" value="d"><span class="option-letter">D</span><span>They bounce back with same speed</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 5 of 20</span>
+                    <p class="question-text">The relationship between impulse and momentum is:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-5" value="a"><span class="option-letter">A</span><span>Impulse causes change in momentum</span></label>
+                        <label class="option"><input type="radio" name="q3-5" value="b"><span class="option-letter">B</span><span>They are unrelated</span></label>
+                        <label class="option"><input type="radio" name="q3-5" value="c"><span class="option-letter">C</span><span>Momentum causes impulse</span></label>
+                        <label class="option"><input type="radio" name="q3-5" value="d"><span class="option-letter">D</span><span>They are the same thing</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 6 of 20</span>
+                    <p class="question-text">A 1000 kg car moving at 20 m/s hits a wall and stops in 0.5 seconds. What is the average force?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-6" value="a"><span class="option-letter">A</span><span>20,000 N</span></label>
+                        <label class="option"><input type="radio" name="q3-6" value="b"><span class="option-letter">B</span><span>40,000 N</span></label>
+                        <label class="option"><input type="radio" name="q3-6" value="c"><span class="option-letter">C</span><span>40,000 N</span></label>
+                        <label class="option"><input type="radio" name="q3-6" value="d"><span class="option-letter">D</span><span>10,000 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 7 of 20</span>
+                    <p class="question-text">When a gun fires a bullet, the gun recoils. This demonstrates:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-7" value="a"><span class="option-letter">A</span><span>Newton's First Law</span></label>
+                        <label class="option"><input type="radio" name="q3-7" value="b"><span class="option-letter">B</span><span>Conservation of momentum</span></label>
+                        <label class="option"><input type="radio" name="q3-7" value="c"><span class="option-letter">C</span><span>Conservation of energy</span></label>
+                        <label class="option"><input type="radio" name="q3-7" value="d"><span class="option-letter">D</span><span>Newton's Third Law</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 8 of 20</span>
+                    <p class="question-text">A 0.05 kg bullet moving at 400 m/s hits a 2 kg block and embeds. What is the final velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-8" value="a"><span class="option-letter">A</span><span>10 m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-8" value="b"><span class="option-letter">B</span><span>20 m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-8" value="c"><span class="option-letter">C</span><span>5 m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-8" value="d"><span class="option-letter">D</span><span>40 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 9 of 20</span>
+                    <p class="question-text">If the net external force on a system is zero, then:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-9" value="a"><span class="option-letter">A</span><span>Velocity is constant</span></label>
+                        <label class="option"><input type="radio" name="q3-9" value="b"><span class="option-letter">B</span><span>Momentum changes</span></label>
+                        <label class="option"><input type="radio" name="q3-9" value="c"><span class="option-letter">C</span><span>Momentum is conserved</span></label>
+                        <label class="option"><input type="radio" name="q3-9" value="d"><span class="option-letter">D</span><span>Acceleration is maximum</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 10 of 20</span>
+                    <p class="question-text">A 70 kg person jumps from a 2 kg boat. If the person jumps at 3 m/s, what is the boat's recoil velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-10" value="a"><span class="option-letter">A</span><span>105 m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-10" value="b"><span class="option-letter">B</span><span>105 m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-10" value="c"><span class="option-letter">C</span><span>3 m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-10" value="d"><span class="option-letter">D</span><span>0.21 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 11 of 20</span>
+                    <p class="question-text">Impulse has the same units as:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-11" value="a"><span class="option-letter">A</span><span>Momentum</span></label>
+                        <label class="option"><input type="radio" name="q3-11" value="b"><span class="option-letter">B</span><span>Force</span></label>
+                        <label class="option"><input type="radio" name="q3-11" value="c"><span class="option-letter">C</span><span>Energy</span></label>
+                        <label class="option"><input type="radio" name="q3-11" value="d"><span class="option-letter">D</span><span>Power</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 12 of 20</span>
+                    <p class="question-text">When two objects collide and stick together, the collision is:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-12" value="a"><span class="option-letter">A</span><span>Elastic</span></label>
+                        <label class="option"><input type="radio" name="q3-12" value="b"><span class="option-letter">B</span><span>Perfectly inelastic</span></label>
+                        <label class="option"><input type="radio" name="q3-12" value="c"><span class="option-letter">C</span><span>Inelastic</span></label>
+                        <label class="option"><input type="radio" name="q3-12" value="d"><span class="option-letter">D</span><span>Explosive</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 13 of 20</span>
+                    <p class="question-text">A 5 kg object moving at 6 m/s collides with a 3 kg object moving at 2 m/s in the same direction. What is the total momentum?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-13" value="a"><span class="option-letter">A</span><span>30 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-13" value="b"><span class="option-letter">B</span><span>36 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-13" value="c"><span class="option-letter">C</span><span>36 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-13" value="d"><span class="option-letter">D</span><span>42 kg·m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 14 of 20</span>
+                    <p class="question-text">To increase the momentum of an object, you can:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-14" value="a"><span class="option-letter">A</span><span>Increase mass or velocity</span></label>
+                        <label class="option"><input type="radio" name="q3-14" value="b"><span class="option-letter">B</span><span>Decrease mass</span></label>
+                        <label class="option"><input type="radio" name="q3-14" value="c"><span class="option-letter">C</span><span>Decrease velocity</span></label>
+                        <label class="option"><input type="radio" name="q3-14" value="d"><span class="option-letter">D</span><span>Keep mass constant</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 15 of 20</span>
+                    <p class="question-text">A 10 N force acts on a 2 kg object for 3 seconds. What is the change in momentum?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-15" value="a"><span class="option-letter">A</span><span>5 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-15" value="b"><span class="option-letter">B</span><span>30 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-15" value="c"><span class="option-letter">C</span><span>15 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-15" value="d"><span class="option-letter">D</span><span>60 kg·m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 16 of 20</span>
+                    <p class="question-text">In a collision, if kinetic energy is NOT conserved, the collision is:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-16" value="a"><span class="option-letter">A</span><span>Elastic</span></label>
+                        <label class="option"><input type="radio" name="q3-16" value="b"><span class="option-letter">B</span><span>Perfectly elastic</span></label>
+                        <label class="option"><input type="radio" name="q3-16" value="c"><span class="option-letter">C</span><span>Inelastic</span></label>
+                        <label class="option"><input type="radio" name="q3-16" value="d"><span class="option-letter">D</span><span>Explosive</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 17 of 20</span>
+                    <p class="question-text">A 4 kg object moving at 5 m/s has momentum of:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-17" value="a"><span class="option-letter">A</span><span>20 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-17" value="b"><span class="option-letter">B</span><span>9 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-17" value="c"><span class="option-letter">C</span><span>1.25 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q3-17" value="d"><span class="option-letter">D</span><span>20 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 18 of 20</span>
+                    <p class="question-text">When a tennis ball hits a racket, the ball's velocity changes because:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-18" value="a"><span class="option-letter">A</span><span>The racket is heavier</span></label>
+                        <label class="option"><input type="radio" name="q3-18" value="b"><span class="option-letter">B</span><span>Impulse is applied</span></label>
+                        <label class="option"><input type="radio" name="q3-18" value="c"><span class="option-letter">C</span><span>Gravity acts on it</span></label>
+                        <label class="option"><input type="radio" name="q3-18" value="d"><span class="option-letter">D</span><span>Air resistance</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 19 of 20</span>
+                    <p class="question-text">Two objects with equal momentum have:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-19" value="a"><span class="option-letter">A</span><span>Equal mass</span></label>
+                        <label class="option"><input type="radio" name="q3-19" value="b"><span class="option-letter">B</span><span>Equal velocity</span></label>
+                        <label class="option"><input type="radio" name="q3-19" value="c"><span class="option-letter">C</span><span>Equal mass × velocity product</span></label>
+                        <label class="option"><input type="radio" name="q3-19" value="d"><span class="option-letter">D</span><span>Equal kinetic energy</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 20 of 20</span>
+                    <p class="question-text">The change in momentum of an object is called:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3-20" value="a"><span class="option-letter">A</span><span>Impulse</span></label>
+                        <label class="option"><input type="radio" name="q3-20" value="b"><span class="option-letter">B</span><span>Force</span></label>
+                        <label class="option"><input type="radio" name="q3-20" value="c"><span class="option-letter">C</span><span>Acceleration</span></label>
+                        <label class="option"><input type="radio" name="q3-20" value="d"><span class="option-letter">D</span><span>Energy</span></label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn primary full" style="margin-top: 2rem;">
+                    📊 Submit Quiz
+                </button>
+            </form>
+
+            <div id="quizResults" class="hidden"></div>
+        </div>
+
+        <div id="quiz4" class="quiz-section" style="display: none;">
+            <div class="quiz-header">
+                <h1>📝 Quiz 4: Conservation Laws</h1>
+                <p style="color: var(--text-secondary);">Deep dive into conservation of momentum</p>
+                <div class="quiz-info">
+                    <span>⏱️ No Time Limit</span>
+                    <span>📊 20 Questions</span>
+                    <span>🎯 No Requirements</span>
+                </div>
+            </div>
+
+            <form class="quiz-form" data-quiz-id="quiz4" onsubmit="handleQuizSubmit(event)">
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 1 of 20</span>
+                    <p class="question-text">The law of conservation of momentum states that:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-1" value="a"><span class="option-letter">A</span><span>Total momentum is conserved in a closed system</span></label>
+                        <label class="option"><input type="radio" name="q4-1" value="b"><span class="option-letter">B</span><span>Momentum is always increasing</span></label>
+                        <label class="option"><input type="radio" name="q4-1" value="c"><span class="option-letter">C</span><span>Momentum is not conserved</span></label>
+                        <label class="option"><input type="radio" name="q4-1" value="d"><span class="option-letter">D</span><span>Only energy is conserved</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 2 of 20</span>
+                    <p class="question-text">A closed system means:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-2" value="a"><span class="option-letter">A</span><span>No energy exists</span></label>
+                        <label class="option"><input type="radio" name="q4-2" value="b"><span class="option-letter">B</span><span>No external forces act on the system</span></label>
+                        <label class="option"><input type="radio" name="q4-2" value="c"><span class="option-letter">C</span><span>The system is isolated in space</span></label>
+                        <label class="option"><input type="radio" name="q4-2" value="d"><span class="option-letter">D</span><span>Mass is not conserved</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 3 of 20</span>
+                    <p class="question-text">In a collision between two objects, if momentum is conserved, then:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-3" value="a"><span class="option-letter">A</span><span>m1v1 = m2v2</span></label>
+                        <label class="option"><input type="radio" name="q4-3" value="b"><span class="option-letter">B</span><span>m1v1 + m2v2 = 0</span></label>
+                        <label class="option"><input type="radio" name="q4-3" value="c"><span class="option-letter">C</span><span>m1v1 + m2v2 = m1v1' + m2v2'</span></label>
+                        <label class="option"><input type="radio" name="q4-3" value="d"><span class="option-letter">D</span><span>v1 = v2</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 4 of 20</span>
+                    <p class="question-text">When a rocket expels exhaust gases downward, the rocket moves upward. This demonstrates:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-4" value="a"><span class="option-letter">A</span><span>Conservation of momentum</span></label>
+                        <label class="option"><input type="radio" name="q4-4" value="b"><span class="option-letter">B</span><span>Newton's First Law</span></label>
+                        <label class="option"><input type="radio" name="q4-4" value="c"><span class="option-letter">C</span><span>Conservation of energy</span></label>
+                        <label class="option"><input type="radio" name="q4-4" value="d"><span class="option-letter">D</span><span>Gravity</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 5 of 20</span>
+                    <p class="question-text">A 60 kg person standing on a 20 kg boat throws a 5 kg ball at 10 m/s. What is the boat's recoil velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-5" value="a"><span class="option-letter">A</span><span>1.5 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-5" value="b"><span class="option-letter">B</span><span>1.5 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-5" value="c"><span class="option-letter">C</span><span>2.5 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-5" value="d"><span class="option-letter">D</span><span>0.5 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 6 of 20</span>
+                    <p class="question-text">In an elastic collision, which quantities are conserved?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-6" value="a"><span class="option-letter">A</span><span>Only momentum</span></label>
+                        <label class="option"><input type="radio" name="q4-6" value="b"><span class="option-letter">B</span><span>Only kinetic energy</span></label>
+                        <label class="option"><input type="radio" name="q4-6" value="c"><span class="option-letter">C</span><span>Both momentum and kinetic energy</span></label>
+                        <label class="option"><input type="radio" name="q4-6" value="d"><span class="option-letter">D</span><span>Neither</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 7 of 20</span>
+                    <p class="question-text">In a perfectly inelastic collision, the objects:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-7" value="a"><span class="option-letter">A</span><span>Stick together after collision</span></label>
+                        <label class="option"><input type="radio" name="q4-7" value="b"><span class="option-letter">B</span><span>Bounce off each other</span></label>
+                        <label class="option"><input type="radio" name="q4-7" value="c"><span class="option-letter">C</span><span>Exchange velocities</span></label>
+                        <label class="option"><input type="radio" name="q4-7" value="d"><span class="option-letter">D</span><span>Both stop</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 8 of 20</span>
+                    <p class="question-text">A 2 kg object moving at 5 m/s collides with a 3 kg object moving at 2 m/s in the same direction. What is the total momentum?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-8" value="a"><span class="option-letter">A</span><span>10 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-8" value="b"><span class="option-letter">B</span><span>16 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-8" value="c"><span class="option-letter">C</span><span>7 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-8" value="d"><span class="option-letter">D</span><span>25 kg·m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 9 of 20</span>
+                    <p class="question-text">When a bullet is fired from a gun, the gun recoils. This is due to:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-9" value="a"><span class="option-letter">A</span><span>The force of the explosion</span></label>
+                        <label class="option"><input type="radio" name="q4-9" value="b"><span class="option-letter">B</span><span>Newton's Third Law</span></label>
+                        <label class="option"><input type="radio" name="q4-9" value="c"><span class="option-letter">C</span><span>Conservation of momentum</span></label>
+                        <label class="option"><input type="radio" name="q4-9" value="d"><span class="option-letter">D</span><span>Gravity</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 10 of 20</span>
+                    <p class="question-text">Two ice skaters push off each other. If skater A (50 kg) moves at 2 m/s, what is skater B's (50 kg) velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-10" value="a"><span class="option-letter">A</span><span>2 m/s in opposite direction</span></label>
+                        <label class="option"><input type="radio" name="q4-10" value="b"><span class="option-letter">B</span><span>2 m/s in same direction</span></label>
+                        <label class="option"><input type="radio" name="q4-10" value="c"><span class="option-letter">C</span><span>4 m/s in opposite direction</span></label>
+                        <label class="option"><input type="radio" name="q4-10" value="d"><span class="option-letter">D</span><span>1 m/s in opposite direction</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 11 of 20</span>
+                    <p class="question-text">Momentum is NOT conserved when:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-11" value="a"><span class="option-letter">A</span><span>Two objects collide in space</span></label>
+                        <label class="option"><input type="radio" name="q4-11" value="b"><span class="option-letter">B</span><span>External forces act on the system</span></label>
+                        <label class="option"><input type="radio" name="q4-11" value="c"><span class="option-letter">C</span><span>The system is closed</span></label>
+                        <label class="option"><input type="radio" name="q4-11" value="d"><span class="option-letter">D</span><span>Mass is constant</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 12 of 20</span>
+                    <p class="question-text">A 0.01 kg bullet moving at 500 m/s hits a 2 kg block. What is the momentum of the bullet before collision?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-12" value="a"><span class="option-letter">A</span><span>5 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-12" value="b"><span class="option-letter">B</span><span>50 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-12" value="c"><span class="option-letter">C</span><span>5 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-12" value="d"><span class="option-letter">D</span><span>0.5 kg·m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 13 of 20</span>
+                    <p class="question-text">In a collision, if kinetic energy is conserved, the collision is:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-13" value="a"><span class="option-letter">A</span><span>Elastic</span></label>
+                        <label class="option"><input type="radio" name="q4-13" value="b"><span class="option-letter">B</span><span>Inelastic</span></label>
+                        <label class="option"><input type="radio" name="q4-13" value="c"><span class="option-letter">C</span><span>Perfectly inelastic</span></label>
+                        <label class="option"><input type="radio" name="q4-13" value="d"><span class="option-letter">D</span><span>Explosive</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 14 of 20</span>
+                    <p class="question-text">A 3 kg ball moving at 4 m/s collides with a 2 kg ball at rest. After elastic collision, what is the velocity of the 2 kg ball?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-14" value="a"><span class="option-letter">A</span><span>2.4 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-14" value="b"><span class="option-letter">B</span><span>4.8 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-14" value="c"><span class="option-letter">C</span><span>3.2 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-14" value="d"><span class="option-letter">D</span><span>1.2 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 15 of 20</span>
+                    <p class="question-text">The total momentum before a collision equals the total momentum after a collision. This is:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-15" value="a"><span class="option-letter">A</span><span>Newton's First Law</span></label>
+                        <label class="option"><input type="radio" name="q4-15" value="b"><span class="option-letter">B</span><span>Newton's Second Law</span></label>
+                        <label class="option"><input type="radio" name="q4-15" value="c"><span class="option-letter">C</span><span>Law of Conservation of Momentum</span></label>
+                        <label class="option"><input type="radio" name="q4-15" value="d"><span class="option-letter">D</span><span>Law of Conservation of Energy</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 16 of 20</span>
+                    <p class="question-text">A 1000 kg car moving at 20 m/s collides with a 500 kg car at rest. If they stick together, what is the final velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-16" value="a"><span class="option-letter">A</span><span>13.33 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-16" value="b"><span class="option-letter">B</span><span>20 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-16" value="c"><span class="option-letter">C</span><span>10 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-16" value="d"><span class="option-letter">D</span><span>15 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 17 of 20</span>
+                    <p class="question-text">When two objects of equal mass collide head-on with equal and opposite velocities, they:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-17" value="a"><span class="option-letter">A</span><span>Both stop</span></label>
+                        <label class="option"><input type="radio" name="q4-17" value="b"><span class="option-letter">B</span><span>Bounce back with same speed</span></label>
+                        <label class="option"><input type="radio" name="q4-17" value="c"><span class="option-letter">C</span><span>Stick together</span></label>
+                        <label class="option"><input type="radio" name="q4-17" value="d"><span class="option-letter">D</span><span>Move in same direction</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 18 of 20</span>
+                    <p class="question-text">A 5 kg object moving at 6 m/s collides with a 3 kg object moving at 2 m/s. After perfectly inelastic collision, what is the final velocity?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-18" value="a"><span class="option-letter">A</span><span>2 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-18" value="b"><span class="option-letter">B</span><span>4 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-18" value="c"><span class="option-letter">C</span><span>4.5 m/s</span></label>
+                        <label class="option"><input type="radio" name="q4-18" value="d"><span class="option-letter">D</span><span>3 m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 19 of 20</span>
+                    <p class="question-text">Which of the following is an example of conservation of momentum?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-19" value="a"><span class="option-letter">A</span><span>A person jumping off a boat</span></label>
+                        <label class="option"><input type="radio" name="q4-19" value="b"><span class="option-letter">B</span><span>A ball falling to the ground</span></label>
+                        <label class="option"><input type="radio" name="q4-19" value="c"><span class="option-letter">C</span><span>A car accelerating</span></label>
+                        <label class="option"><input type="radio" name="q4-19" value="d"><span class="option-letter">D</span><span>A book on a table</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 20 of 20</span>
+                    <p class="question-text">In a system with no external forces, the total momentum:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4-20" value="a"><span class="option-letter">A</span><span>Increases over time</span></label>
+                        <label class="option"><input type="radio" name="q4-20" value="b"><span class="option-letter">B</span><span>Remains constant</span></label>
+                        <label class="option"><input type="radio" name="q4-20" value="c"><span class="option-letter">C</span><span>Decreases over time</span></label>
+                        <label class="option"><input type="radio" name="q4-20" value="d"><span class="option-letter">D</span><span>Fluctuates randomly</span></label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn primary full" style="margin-top: 2rem;">
+                    📊 Submit Quiz
+                </button>
+            </form>
+
+            <div id="quizResults" class="hidden"></div>
+        </div>
+
+        <div id="quiz5" class="quiz-section" style="display: none;">
+            <div class="quiz-header">
+                <h1>📝 Quiz 5: Real-World Applications</h1>
+                <p style="color: var(--text-secondary);">Apply momentum and impulse to real situations</p>
+                <div class="quiz-info">
+                    <span>⏱️ No Time Limit</span>
+                    <span>📊 20 Questions</span>
+                    <span>🎯 No Requirements</span>
+                </div>
+            </div>
+
+            <form class="quiz-form" data-quiz-id="quiz5" onsubmit="handleQuizSubmit(event)">
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 1 of 20</span>
+                    <p class="question-text">Car airbags reduce injury by:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-1" value="a"><span class="option-letter">A</span><span>Increasing the time of impact</span></label>
+                        <label class="option"><input type="radio" name="q5-1" value="b"><span class="option-letter">B</span><span>Decreasing the force</span></label>
+                        <label class="option"><input type="radio" name="q5-1" value="c"><span class="option-letter">C</span><span>Increasing the mass</span></label>
+                        <label class="option"><input type="radio" name="q5-1" value="d"><span class="option-letter">D</span><span>Decreasing velocity</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 2 of 20</span>
+                    <p class="question-text">When a baseball player catches a ball, they move their hand backward. This:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-2" value="a"><span class="option-letter">A</span><span>Increases the force</span></label>
+                        <label class="option"><input type="radio" name="q5-2" value="b"><span class="option-letter">B</span><span>Decreases the force by increasing time</span></label>
+                        <label class="option"><input type="radio" name="q5-2" value="c"><span class="option-letter">C</span><span>Has no effect on force</span></label>
+                        <label class="option"><input type="radio" name="q5-2" value="d"><span class="option-letter">D</span><span>Increases the momentum</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 3 of 20</span>
+                    <p class="question-text">A 70 kg person in a car crashes from 20 m/s to 0 in 0.5 seconds. What is the average force on the person?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-3" value="a"><span class="option-letter">A</span><span>700 N</span></label>
+                        <label class="option"><input type="radio" name="q5-3" value="b"><span class="option-letter">B</span><span>1400 N</span></label>
+                        <label class="option"><input type="radio" name="q5-3" value="c"><span class="option-letter">C</span><span>2800 N</span></label>
+                        <label class="option"><input type="radio" name="q5-3" value="d"><span class="option-letter">D</span><span>350 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 4 of 20</span>
+                    <p class="question-text">Why do gymnasts bend their knees when landing?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-4" value="a"><span class="option-letter">A</span><span>To increase stopping time and reduce force</span></label>
+                        <label class="option"><input type="radio" name="q5-4" value="b"><span class="option-letter">B</span><span>To decrease stopping time</span></label>
+                        <label class="option"><input type="radio" name="q5-4" value="c"><span class="option-letter">C</span><span>To increase momentum</span></label>
+                        <label class="option"><input type="radio" name="q5-4" value="d"><span class="option-letter">D</span><span>To decrease mass</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 5 of 20</span>
+                    <p class="question-text">A 0.15 kg baseball moving at 40 m/s is hit and moves at 50 m/s in the opposite direction. If contact time is 0.01 seconds, what is the force?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-5" value="a"><span class="option-letter">A</span><span>60 N</span></label>
+                        <label class="option"><input type="radio" name="q5-5" value="b"><span class="option-letter">B</span><span>1350 N</span></label>
+                        <label class="option"><input type="radio" name="q5-5" value="c"><span class="option-letter">C</span><span>150 N</span></label>
+                        <label class="option"><input type="radio" name="q5-5" value="d"><span class="option-letter">D</span><span>750 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 6 of 20</span>
+                    <p class="question-text">Rockets work on the principle of:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-6" value="a"><span class="option-letter">A</span><span>Newton's First Law</span></label>
+                        <label class="option"><input type="radio" name="q5-6" value="b"><span class="option-letter">B</span><span>Conservation of energy</span></label>
+                        <label class="option"><input type="radio" name="q5-6" value="c"><span class="option-letter">C</span><span>Conservation of momentum</span></label>
+                        <label class="option"><input type="radio" name="q5-6" value="d"><span class="option-letter">D</span><span>Bernoulli's principle</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 7 of 20</span>
+                    <p class="question-text">A 5000 kg truck moving at 15 m/s crashes into a wall and stops in 0.2 seconds. What is the average force?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-7" value="a"><span class="option-letter">A</span><span>375,000 N</span></label>
+                        <label class="option"><input type="radio" name="q5-7" value="b"><span class="option-letter">B</span><span>75,000 N</span></label>
+                        <label class="option"><input type="radio" name="q5-7" value="c"><span class="option-letter">C</span><span>150,000 N</span></label>
+                        <label class="option"><input type="radio" name="q5-7" value="d"><span class="option-letter">D</span><span>300,000 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 8 of 20</span>
+                    <p class="question-text">When a person jumps from a height, bending their knees on landing:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-8" value="a"><span class="option-letter">A</span><span>Increases the impact force</span></label>
+                        <label class="option"><input type="radio" name="q5-8" value="b"><span class="option-letter">B</span><span>Decreases the impact force</span></label>
+                        <label class="option"><input type="radio" name="q5-8" value="c"><span class="option-letter">C</span><span>Has no effect on force</span></label>
+                        <label class="option"><input type="radio" name="q5-8" value="d"><span class="option-letter">D</span><span>Increases momentum</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 9 of 20</span>
+                    <p class="question-text">A 0.2 kg tennis ball moving at 30 m/s hits a wall and bounces back at 25 m/s. What is the change in momentum?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-9" value="a"><span class="option-letter">A</span><span>1 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q5-9" value="b"><span class="option-letter">B</span><span>5 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q5-9" value="c"><span class="option-letter">C</span><span>11 kg·m/s</span></label>
+                        <label class="option"><input type="radio" name="q5-9" value="d"><span class="option-letter">D</span><span>55 kg·m/s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 10 of 20</span>
+                    <p class="question-text">In a car collision, seatbelts protect passengers by:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-10" value="a"><span class="option-letter">A</span><span>Increasing the time over which momentum changes</span></label>
+                        <label class="option"><input type="radio" name="q5-10" value="b"><span class="option-letter">B</span><span>Decreasing the mass</span></label>
+                        <label class="option"><input type="radio" name="q5-10" value="c"><span class="option-letter">C</span><span>Increasing the force</span></label>
+                        <label class="option"><input type="radio" name="q5-10" value="d"><span class="option-letter">D</span><span>Decreasing velocity</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 11 of 20</span>
+                    <p class="question-text">A 0.4 kg ball moving at 8 m/s is caught and brought to rest in 0.2 seconds. What is the average force?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-11" value="a"><span class="option-letter">A</span><span>8 N</span></label>
+                        <label class="option"><input type="radio" name="q5-11" value="b"><span class="option-letter">B</span><span>16 N</span></label>
+                        <label class="option"><input type="radio" name="q5-11" value="c"><span class="option-letter">C</span><span>32 N</span></label>
+                        <label class="option"><input type="radio" name="q5-11" value="d"><span class="option-letter">D</span><span>64 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 12 of 20</span>
+                    <p class="question-text">When a person jumps off a diving board, they push the board down. The board pushes them up. This is an example of:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-12" value="a"><span class="option-letter">A</span><span>Conservation of energy</span></label>
+                        <label class="option"><input type="radio" name="q5-12" value="b"><span class="option-letter">B</span><span>Newton's First Law</span></label>
+                        <label class="option"><input type="radio" name="q5-12" value="c"><span class="option-letter">C</span><span>Newton's Third Law and conservation of momentum</span></label>
+                        <label class="option"><input type="radio" name="q5-12" value="d"><span class="option-letter">D</span><span>Gravity only</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 13 of 20</span>
+                    <p class="question-text">A 1000 kg car moving at 25 m/s hits a wall and stops. If the stopping time is 0.3 seconds, what is the average force?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-13" value="a"><span class="option-letter">A</span><span>83,333 N</span></label>
+                        <label class="option"><input type="radio" name="q5-13" value="b"><span class="option-letter">B</span><span>25,000 N</span></label>
+                        <label class="option"><input type="radio" name="q5-13" value="c"><span class="option-letter">C</span><span>50,000 N</span></label>
+                        <label class="option"><input type="radio" name="q5-13" value="d"><span class="option-letter">D</span><span>100,000 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 14 of 20</span>
+                    <p class="question-text">In sports, when a tennis player hits a ball, the force is large because:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-14" value="a"><span class="option-letter">A</span><span>The ball is heavy</span></label>
+                        <label class="option"><input type="radio" name="q5-14" value="b"><span class="option-letter">B</span><span>The contact time is very short</span></label>
+                        <label class="option"><input type="radio" name="q5-14" value="c"><span class="option-letter">C</span><span>The velocity is low</span></label>
+                        <label class="option"><input type="radio" name="q5-14" value="d"><span class="option-letter">D</span><span>The mass is large</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 15 of 20</span>
+                    <p class="question-text">A 0.1 kg egg dropped from 5 meters hits the ground and stops in 0.01 seconds. What is the force on the egg?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-15" value="a"><span class="option-letter">A</span><span>5 N</span></label>
+                        <label class="option"><input type="radio" name="q5-15" value="b"><span class="option-letter">B</span><span>10 N</span></label>
+                        <label class="option"><input type="radio" name="q5-15" value="c"><span class="option-letter">C</span><span>~70 N</span></label>
+                        <label class="option"><input type="radio" name="q5-15" value="d"><span class="option-letter">D</span><span>100 N</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 16 of 20</span>
+                    <p class="question-text">When a karate expert breaks a board, the technique involves:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-16" value="a"><span class="option-letter">A</span><span>High speed and short contact time for large force</span></label>
+                        <label class="option"><input type="radio" name="q5-16" value="b"><span class="option-letter">B</span><span>Low speed and long contact time</span></label>
+                        <label class="option"><input type="radio" name="q5-16" value="c"><span class="option-letter">C</span><span>Maximum mass</span></label>
+                        <label class="option"><input type="radio" name="q5-16" value="d"><span class="option-letter">D</span><span>Minimum force</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 17 of 20</span>
+                    <p class="question-text">A 1500 kg car moving at 30 m/s crashes and stops in 0.5 seconds. What is the impulse experienced?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-17" value="a"><span class="option-letter">A</span><span>15,000 N·s</span></label>
+                        <label class="option"><input type="radio" name="q5-17" value="b"><span class="option-letter">B</span><span>45,000 N·s</span></label>
+                        <label class="option"><input type="radio" name="q5-17" value="c"><span class="option-letter">C</span><span>30,000 N·s</span></label>
+                        <label class="option"><input type="radio" name="q5-17" value="d"><span class="option-letter">D</span><span>60,000 N·s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="c">
+                    <span class="question-number">Question 18 of 20</span>
+                    <p class="question-text">Padded dashboards in cars reduce injury by:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-18" value="a"><span class="option-letter">A</span><span>Decreasing the mass</span></label>
+                        <label class="option"><input type="radio" name="q5-18" value="b"><span class="option-letter">B</span><span>Increasing the velocity</span></label>
+                        <label class="option"><input type="radio" name="q5-18" value="c"><span class="option-letter">C</span><span>Increasing the time of impact</span></label>
+                        <label class="option"><input type="radio" name="q5-18" value="d"><span class="option-letter">D</span><span>Decreasing the impulse</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="a">
+                    <span class="question-number">Question 19 of 20</span>
+                    <p class="question-text">A 0.05 kg bullet moving at 400 m/s hits a 2 kg block and embeds. What is the impulse on the block?</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-19" value="a"><span class="option-letter">A</span><span>20 N·s</span></label>
+                        <label class="option"><input type="radio" name="q5-19" value="b"><span class="option-letter">B</span><span>10 N·s</span></label>
+                        <label class="option"><input type="radio" name="q5-19" value="c"><span class="option-letter">C</span><span>40 N·s</span></label>
+                        <label class="option"><input type="radio" name="q5-19" value="d"><span class="option-letter">D</span><span>5 N·s</span></label>
+                    </div>
+                </div>
+
+                <div class="question-card" data-correct="b">
+                    <span class="question-number">Question 20 of 20</span>
+                    <p class="question-text">The best way to reduce force in a collision is to:</p>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5-20" value="a"><span class="option-letter">A</span><span>Decrease the mass</span></label>
+                        <label class="option"><input type="radio" name="q5-20" value="b"><span class="option-letter">B</span><span>Increase the time of impact</span></label>
+                        <label class="option"><input type="radio" name="q5-20" value="c"><span class="option-letter">C</span><span>Increase the velocity</span></label>
+                        <label class="option"><input type="radio" name="q5-20" value="d"><span class="option-letter">D</span><span>Decrease the impulse</span></label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn primary full" style="margin-top: 2rem;">
+                    📊 Submit Quiz
+                </button>
+            </form>
+
+            <div id="quizResults" class="hidden"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer-grid">
+            <div>
+                <strong>⚡ ImpulseLearn</strong>
+                <p style="color: var(--text-secondary);">Test your knowledge with comprehensive quizzes on momentum and impulse.</p>
+            </div>
+            <div>
+                <strong>Continue Learning</strong>
+                <a href="lessons.html">Lessons</a>
+                <a href="activities.html">Activities</a>
+                <a href="exams.html">Exams</a>
+            </div>
+            <div>
+                <strong>Practice</strong>
+                <a href="simulation.html">Simulation</a>
+                <a href="missions.html">Missions</a>
+            </div>
+            <div>
+                <strong>Navigation</strong>
+                <a href="student-dashboard.html">Dashboard</a>
+                <a href="tutorial.html">Tutorial</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="impulselearn.js"></script>
+    <script>
+        function startQuiz(quizNumber) {
+            // No requirements - all quizzes are accessible
+            // Hide all quiz sections
+            document.querySelectorAll('.quiz-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show selected quiz
+            const selectedQuiz = document.getElementById('quiz' + quizNumber);
+            if (selectedQuiz) {
+                selectedQuiz.style.display = 'block';
+                selectedQuiz.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function updateQuizButtons() {
+            // All quizzes are always available - no unlocking needed
+            for (let i = 2; i <= 5; i++) {
+                const btn = document.getElementById(`quiz${i}Btn`);
+                if (btn) {
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
+                    btn.classList.remove('disabled');
+                    btn.innerHTML = `📝 Quiz ${i}: ${getQuizTitle(i)}`;
+                }
+            }
+        }
+
+        function getQuizTitle(num) {
+            const titles = {
+                2: 'Understanding Impulse',
+                3: 'Momentum-Impulse Relationship',
+                4: 'Conservation Laws',
+                5: 'Real-World Applications'
+            };
+            return titles[num] || '';
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateQuizButtons();
+        });
+    </script>
+</body>
+</html>

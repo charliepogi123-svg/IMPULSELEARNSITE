@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities - ImpulseLearn</title>
+    <link rel="stylesheet" href="impulselearn.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="wrap nav-inner">
+            <a class="brand" href="student-dashboard.html">
+                <span>⚡ ImpulseLearn<small>Momentum & Impulse</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="lessons.html">Lessons</a>
+                <a href="activities.html">Activities</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="exams.html">Exams</a>
+                <a href="missions.html">Missions</a>
+                <a href="simulation.html">Simulation</a>
+                <a href="tutorial.html">Tutorial</a>
+            </div>
+            <div class="nav-actions">
+                <span class="btn sm" style="background: rgba(108, 92, 231, 0.2);">
+                    Level <span class="level-value">1</span> | XP: <span class="xp-value">0</span>
+                </span>
+                <a href="student-dashboard.html" class="btn sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="activity-container">
+        <div class="lesson-header">
+            <h1>🎮 Interactive Activities</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 1rem;">
+                Learn momentum and impulse through fun, interactive exercises
+            </p>
+            <div style="margin-top: 2rem;">
+                <div class="progress-container" style="max-width: 500px; margin: 0 auto;">
+                    <div class="progress-bar" id="activityProgress" style="width: 0%;"></div>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.9rem;">
+                    <span id="activityProgressText">0/5 Activities Completed</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Activity 1: Drag and Drop Formula Matching -->
+        <div class="activity-card" id="activity1">
+            <div class="activity-header">
+                <h2 class="activity-title">Activity 1: Formula Matching</h2>
+                <span class="reward-xp">+75 XP</span>
+            </div>
+            
+            <div class="activity-instructions">
+                <strong>📋 Instructions:</strong> Drag each formula from the left side and drop it into the correct definition on the right side. Match all 4 formulas correctly to complete this activity!
+            </div>
+            
+            <div class="drag-container">
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Formulas</h3>
+                    <div class="drag-item" draggable="true" data-value="momentum" style="margin-bottom: 1rem;">
+                        p = m × v
+                    </div>
+                    <div class="drag-item" draggable="true" data-value="impulse" style="margin-bottom: 1rem;">
+                        J = F × Δt
+                    </div>
+                    <div class="drag-item" draggable="true" data-value="force" style="margin-bottom: 1rem;">
+                        F = m × a
+                    </div>
+                    <div class="drag-item" draggable="true" data-value="kinetic" style="margin-bottom: 1rem;">
+                        KE = ½mv²
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--secondary);">Definitions</h3>
+                    <div class="drop-zone" data-answer="momentum">
+                        Product of mass and velocity
+                    </div>
+                    <div class="drop-zone" data-answer="impulse">
+                        Force multiplied by time interval
+                    </div>
+                    <div class="drop-zone" data-answer="force">
+                        Mass times acceleration
+                    </div>
+                    <div class="drop-zone" data-answer="kinetic">
+                        One-half mass times velocity squared
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn primary full" onclick="completeActivity('activity1')" style="margin-top: 2rem;">
+                ✅ Complete Activity (+75 XP)
+            </button>
+            
+            <div id="activity1Results" style="margin-top: 1rem;"></div>
+        </div>
+
+        <!-- Activity 2: Identify Momentum -->
+        <div class="activity-card" id="activity2">
+            <div class="activity-header">
+                <h2 class="activity-title">Activity 2: Identify the Momentum</h2>
+                <span class="reward-xp">+75 XP</span>
+            </div>
+            
+            <div class="activity-instructions">
+                <strong>📋 Instructions:</strong> Read each scenario and calculate the momentum. Select the correct answer from the options provided.
+            </div>
+            
+            <div style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">Scenario 1: The Bowling Ball</h3>
+                <p>A bowling ball has a mass of 7 kg and is rolling at 3 m/s. What is its momentum?</p>
+                <div class="options" style="margin-top: 1rem;">
+                    <div class="option" onclick="selectOption(this, 'activity2-q1', '21')">
+                        <span class="option-letter">A</span>
+                        <span>10 kg·m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity2-q1', '21')">
+                        <span class="option-letter">B</span>
+                        <span>21 kg·m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity2-q1', '21')">
+                        <span class="option-letter">C</span>
+                        <span>35 kg·m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity2-q1', '21')">
+                        <span class="option-letter">D</span>
+                        <span>4 kg·m/s</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">Scenario 2: The Bicycle</h3>
+                <p>A bicycle with rider has a total mass of 80 kg and is moving at 5 m/s. Calculate the momentum.</p>
+                <div class="options" style="margin-top: 1rem;">
+                    <div class="option" onclick="selectOption(this, 'activity2-q2', '400')">
+                        <span class="option-letter">A</span>
+                        <span>200 kg·m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity2-q2', '400')">
+                        <span class="option-letter">B</span>
+                        <span>400 kg·m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity2-q2', '400')">
+                        <span class="option-letter">C</span>
+                        <span>85 kg·m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity2-q2', '400')">
+                        <span class="option-letter">D</span>
+                        <span>16 kg·m/s</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn primary full" onclick="completeActivity('activity2')" style="margin-top: 2rem;">
+                ✅ Complete Activity (+75 XP)
+            </button>
+            
+            <div id="activity2Results" style="margin-top: 1rem;"></div>
+        </div>
+
+        <!-- Activity 3: Solve the Problem -->
+        <div class="activity-card" id="activity3">
+            <div class="activity-header">
+                <h2 class="activity-title">Activity 3: Problem Solving Challenge</h2>
+                <span class="reward-xp">+100 XP</span>
+            </div>
+            
+            <div class="activity-instructions">
+                <strong>📋 Instructions:</strong> Solve these word problems step by step. Show your work and select the correct final answer.
+            </div>
+            
+            <div style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">Problem 1: The Truck Collision</h3>
+                <p>A truck with mass 2000 kg is moving at 10 m/s. It collides with a stationary car (mass 1000 kg). After the collision, they stick together. What is their final velocity?</p>
+                <div class="options" style="margin-top: 1rem;">
+                    <div class="option" onclick="selectOption(this, 'activity3-q1', '6.67')">
+                        <span class="option-letter">A</span>
+                        <span>5 m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity3-q1', '6.67')">
+                        <span class="option-letter">B</span>
+                        <span>6.67 m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity3-q1', '6.67')">
+                        <span class="option-letter">C</span>
+                        <span>10 m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity3-q1', '6.67')">
+                        <span class="option-letter">D</span>
+                        <span>15 m/s</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(0, 206, 201, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid var(--secondary);">
+                <strong>💡 Hint:</strong>
+                <p>Use conservation of momentum: m₁v₁ + m₂v₂ = (m₁ + m₂)v_f</p>
+                <p style="margin-top: 0.5rem;">Initial momentum = 2000 kg × 10 m/s + 1000 kg × 0 m/s = 20,000 kg·m/s</p>
+                <p style="margin-top: 0.5rem;">Final momentum = (2000 + 1000) kg × v_f = 3000 kg × v_f</p>
+                <p style="margin-top: 0.5rem;">Solve: 20,000 = 3000 × v_f</p>
+            </div>
+            
+            <button class="btn primary full" onclick="completeActivity('activity3')" style="margin-top: 2rem;">
+                ✅ Complete Activity (+100 XP)
+            </button>
+            
+            <div id="activity3Results" style="margin-top: 1rem;"></div>
+        </div>
+
+        <!-- Activity 4: True or False -->
+        <div class="activity-card" id="activity4">
+            <div class="activity-header">
+                <h2 class="activity-title">Activity 4: True or False Challenge</h2>
+                <span class="reward-xp">+50 XP</span>
+            </div>
+            
+            <div class="activity-instructions">
+                <strong>📋 Instructions:</strong> Determine if each statement about momentum and impulse is True or False. Click your answer for each statement.
+            </div>
+            
+            <div id="trueFalseQuestions">
+                <div class="tf-question" data-answer="false" style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin-bottom: 1rem; font-weight: 600;">1. Momentum is a scalar quantity (has only magnitude, no direction).</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn sm" onclick="answerTrueFalse(this, false)">✓ True</button>
+                        <button class="btn sm" onclick="answerTrueFalse(this, false)">✗ False</button>
+                    </div>
+                </div>
+                
+                <div class="tf-question" data-answer="true" style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin-bottom: 1rem; font-weight: 600;">2. Impulse can be increased by increasing the time of impact.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn sm" onclick="answerTrueFalse(this, true)">✓ True</button>
+                        <button class="btn sm" onclick="answerTrueFalse(this, true)">✗ False</button>
+                    </div>
+                </div>
+                
+                <div class="tf-question" data-answer="false" style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin-bottom: 1rem; font-weight: 600;">3. A heavier object always has more momentum than a lighter one.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn sm" onclick="answerTrueFalse(this, false)">✓ True</button>
+                        <button class="btn sm" onclick="answerTrueFalse(this, false)">✗ False</button>
+                    </div>
+                </div>
+                
+                <div class="tf-question" data-answer="true" style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin-bottom: 1rem; font-weight: 600;">4. Seatbelts reduce injury by increasing the time of deceleration.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn sm" onclick="answerTrueFalse(this, true)">✓ True</button>
+                        <button class="btn sm" onclick="answerTrueFalse(this, true)">✗ False</button>
+                    </div>
+                </div>
+                
+                <div class="tf-question" data-answer="true" style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin-bottom: 1rem; font-weight: 600;">5. Momentum is conserved in all types of collisions.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn sm" onclick="answerTrueFalse(this, true)">✓ True</button>
+                        <button class="btn sm" onclick="answerTrueFalse(this, true)">✗ False</button>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn primary full" onclick="completeActivity('activity4')" style="margin-top: 2rem;">
+                ✅ Complete Activity (+50 XP)
+            </button>
+            
+            <div id="activity4Results" style="margin-top: 1rem;"></div>
+        </div>
+
+        <!-- Activity 5: Simulation Challenge -->
+        <div class="activity-card" id="activity5">
+            <div class="activity-header">
+                <h2 class="activity-title">Activity 5: Prediction Challenge</h2>
+                <span class="reward-xp">+100 XP</span>
+            </div>
+            
+            <div class="activity-instructions">
+                <strong>📋 Instructions:</strong> Predict what will happen in each collision scenario before checking the answers. Think about conservation of momentum!
+            </div>
+            
+            <div style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">Scenario 1: Equal Mass Collision</h3>
+                <p>Two objects of equal mass (5 kg each) collide head-on. Object A moves at 4 m/s to the right, Object B moves at 4 m/s to the left. After elastic collision, what happens?</p>
+                <div class="options" style="margin-top: 1rem;">
+                    <div class="option" onclick="selectOption(this, 'activity5-q1', 'reverse')">
+                        <span class="option-letter">A</span>
+                        <span>They both stop</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity5-q1', 'reverse')">
+                        <span class="option-letter">B</span>
+                        <span>They reverse directions</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity5-q1', 'reverse')">
+                        <span class="option-letter">C</span>
+                        <span>They stick together</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity5-q1', 'reverse')">
+                        <span class="option-letter">D</span>
+                        <span>Object A stops, B continues</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(0, 206, 201, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid var(--secondary);">
+                <strong>🔍 Explanation:</strong>
+                <p style="margin-top: 0.5rem;">In an elastic collision with equal masses, the objects exchange velocities. Since they have equal and opposite momenta initially, they will reverse directions after collision.</p>
+            </div>
+            
+            <div style="background: rgba(108, 92, 231, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">Scenario 2: Heavy vs Light Object</h3>
+                <p>A heavy truck (mass = 5000 kg) moving at 2 m/s collides with a small car (mass = 1000 kg) at rest. After perfectly inelastic collision, what is the final velocity?</p>
+                <div class="options" style="margin-top: 1rem;">
+                    <div class="option" onclick="selectOption(this, 'activity5-q2', '1.67')">
+                        <span class="option-letter">A</span>
+                        <span>1.67 m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity5-q2', '1.67')">
+                        <span class="option-letter">B</span>
+                        <span>2 m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity5-q2', '1.67')">
+                        <span class="option-letter">C</span>
+                        <span>10 m/s</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'activity5-q2', '1.67')">
+                        <span class="option-letter">D</span>
+                        <span>0.4 m/s</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn primary full" onclick="completeActivity('activity5')" style="margin-top: 2rem;">
+                ✅ Complete Activity (+100 XP)
+            </button>
+            
+            <div id="activity5Results" style="margin-top: 1rem;"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer-grid">
+            <div>
+                <strong>⚡ ImpulseLearn</strong>
+                <p style="color: var(--text-secondary);">Interactive activities to master momentum and impulse concepts.</p>
+            </div>
+            <div>
+                <strong>Continue Learning</strong>
+                <a href="lessons.html">Lessons</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="missions.html">Missions</a>
+            </div>
+            <div>
+                <strong>Practice</strong>
+                <a href="simulation.html">Simulation</a>
+                <a href="exams.html">Exams</a>
+            </div>
+            <div>
+                <strong>Navigation</strong>
+                <a href="student-dashboard.html">Dashboard</a>
+                <a href="tutorial.html">Tutorial</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="impulselearn.js"></script>
+    <script>
+        let selectedOptions = {};
+        let trueFalseAnswers = {};
+        
+        function selectOption(element, questionId, correctAnswer) {
+            const questionCard = element.closest('.options') || element.parentElement;
+            questionCard.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            
+            if (!selectedOptions[questionId]) {
+                selectedOptions[questionId] = correctAnswer;
+            }
+        }
+        
+        function answerTrueFalse(button, answer) {
+            const questionDiv = button.closest('.tf-question');
+            const buttons = questionDiv.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('correct', 'incorrect');
+            });
+            
+            const correctAnswer = questionDiv.dataset.answer === 'true';
+            if (answer === correctAnswer) {
+                button.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+            }
+        }
+        
+        function completeActivity(activityId) {
+            if (!AppState.completedMissions.includes(activityId)) {
+                AppState.completedMissions.push(activityId);
+                saveUserProgress();
+                updateActivityProgress();
+                showNotification('🎉 Activity Complete! Great job!', 'success');
+                
+                const activity = document.getElementById(activityId);
+                activity.style.borderColor = 'rgba(0, 184, 148, 0.5)';
+                activity.style.background = 'rgba(0, 184, 148, 0.05)';
+                
+                // Show results
+                showActivityResults(activityId);
+            } else {
+                showNotification('✓ Activity already completed!', 'info');
+            }
+        }
+        
+        function showActivityResults(activityId) {
+            const resultsDiv = document.getElementById(activityId + 'Results');
+            if (!resultsDiv) return;
+            
+            let html = '<div style="background: rgba(0, 184, 148, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; border-left: 4px solid var(--success);">';
+            html += '<h4 style="color: var(--success); margin-bottom: 0.5rem;">✓ Activity Completed!</h4>';
+            html += '<p style="color: var(--text-secondary);">Great work! You\'ve completed this activity.</p>';
+            html += '</div>';
+            
+            resultsDiv.innerHTML = html;
+        }
+        
+        function updateActivityProgress() {
+            const totalActivities = 5;
+            const completed = AppState.completedMissions.filter(m => m.startsWith('activity')).length;
+            const percentage = (completed / totalActivities) * 100;
+            
+            const progressBar = document.getElementById('activityProgress');
+            if (progressBar) {
+                progressBar.style.width = percentage + '%';
+            }
+            
+            const progressText = document.getElementById('activityProgressText');
+            if (progressText) {
+                progressText.textContent = `${completed}/${totalActivities} Activities Completed`;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            updateActivityProgress();
+            
+            // Mark completed activities
+            AppState.completedMissions.forEach(missionId => {
+                if (missionId.startsWith('activity')) {
+                    const activity = document.getElementById(missionId);
+                    if (activity) {
+                        activity.style.borderColor = 'rgba(0, 184, 148, 0.5)';
+                        activity.style.background = 'rgba(0, 184, 148, 0.05)';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

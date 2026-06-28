@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - ImpulseLearn</title>
+    <link rel="stylesheet" href="impulselearn.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="wrap nav-inner">
+            <a class="brand" href="student-dashboard.html">
+                <span>⚡ ImpulseLearn<small>Momentum & Impulse</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="lessons.html">Lessons</a>
+                <a href="activities.html">Activities</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="exams.html">Exams</a>
+                <a href="missions.html">Missions</a>
+                <a href="simulation.html">Simulation</a>
+                <a href="tutorial.html">Tutorial</a>
+            </div>
+            <div class="nav-actions">
+                <span class="btn sm" style="background: rgba(108, 92, 231, 0.2);">
+                    Level <span class="level-value">1</span> | XP: <span class="xp-value">0</span>
+                </span>
+                <a href="index.html" class="btn sm" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <div class="wrap">
+            <div class="dashboard-header">
+                <div>
+                    <h1>Welcome back, <span id="studentName">Student</span>! 👋</h1>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Ready to learn about Momentum and Impulse?</p>
+                </div>
+            </div>
+
+            <div class="welcome-card">
+                <h2>📊 Your Progress Overview</h2>
+                <div class="grid-3" style="margin-top: 1.5rem;">
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Lessons Available</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Activities</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Quizzes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎓</div>
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Exams</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Missions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚗️</div>
+                        <div class="stat-value">1</div>
+                        <div class="stat-label">Simulation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-card">
+                <h2>🎯 Quick Access</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Jump back into your learning journey</p>
+                <div class="grid-4">
+                    <a href="lessons.html" class="btn primary full">📖 Lessons</a>
+                    <a href="activities.html" class="btn full">🎮 Activities</a>
+                    <a href="quizzes.html" class="btn full">📝 Quizzes</a>
+                    <a href="exams.html" class="btn full">🎓 Exams</a>
+                    <a href="missions.html" class="btn full">🏆 Missions</a>
+                    <a href="simulation.html" class="btn full">⚗️ Simulation</a>
+                    <a href="tutorial.html" class="btn full">❓ Tutorial</a>
+                </div>
+            </div>
+
+            <div class="welcome-card">
+                <h2>📈 Your Stats</h2>
+                <div style="margin-top: 1rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Overall Progress</span>
+                            <span id="overallProgress">0%</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="overallProgressBar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-2">
+                        <div>
+                            <h3 style="margin-bottom: 1rem; color: var(--primary);">Recent Activity</h3>
+                            <ul style="list-style: none; color: var(--text-secondary);">
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">📖 Started Lesson 1</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">🎮 Completed Activity 1</li>
+                                <li style="padding: 0.5rem 0;">📝 Took Quiz 1</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 1rem; color: var(--primary);">Achievements</h3>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <span class="reward-badge">🌟 Beginner</span>
+                                <span class="reward-xp">🔥 3 Day Streak</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer-grid">
+            <div>
+                <strong>⚡ ImpulseLearn</strong>
+                <p style="color: var(--text-secondary);">Interactive Momentum and Impulse Learning System. Making physics fun and engaging for students.</p>
+            </div>
+            <div>
+                <strong>Learning</strong>
+                <a href="lessons.html">Lessons</a>
+                <a href="activities.html">Activities</a>
+                <a href="quizzes.html">Quizzes</a>
+            </div>
+            <div>
+                <strong>Assessment</strong>
+                <a href="exams.html">Exams</a>
+                <a href="missions.html">Missions</a>
+                <a href="simulation.html">Simulation</a>
+            </div>
+            <div>
+                <strong>Support</strong>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="impulselearn.js"></script>
+    <script>
+        // Update dashboard with user info
+        document.addEventListener('DOMContentLoaded', () => {
+            if (AppState.currentUser) {
+                document.getElementById('studentName').textContent = AppState.currentUser;
+                document.querySelectorAll('.level-value').forEach(el => el.textContent = AppState.level);
+                document.querySelectorAll('.xp-value').forEach(el => el.textContent = AppState.xp);
+                
+                // Update progress
+                const totalActivities = 5 + 5 + 2; // lessons + activities + quizzes
+                const completed = AppState.completedMissions.length;
+                const progress = Math.round((completed / totalActivities) * 100);
+                document.getElementById('overallProgress').textContent = progress + '%';
+                document.getElementById('overallProgressBar').style.width = progress + '%';
+            }
+        });
+    </script>
+</body>
+</html>

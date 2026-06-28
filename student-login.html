@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - ImpulseLearn</title>
+    <link rel="stylesheet" href="impulselearn.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>🎓 Student Portal</h1>
+            <p class="subtitle">Login or Register to access your learning dashboard</p>
+            
+            <!-- Tabs -->
+            <div class="tabs" style="margin-bottom: 2rem;">
+                <button class="tab-button active" type="button" onclick="showTab('login')">Login</button>
+                <button class="tab-button" type="button" onclick="showTab('register')">Register</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active" onsubmit="loginStudent(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email / Gmail</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required autocomplete="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required autocomplete="current-password">
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    🔓 Login
+                </button>
+                
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                    Note: New accounts require teacher approval before login.
+                </p>
+            </form>
+            
+            <!-- Registration Form -->
+            <form id="registerForm" class="auth-form" style="display: none;" onsubmit="registerStudent(event)">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" name="fullName" placeholder="Enter your full name" required autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="regEmail">Email / Gmail</label>
+                    <input type="email" id="regEmail" name="email" placeholder="Enter your email" required autocomplete="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" name="password" placeholder="Create a password (min. 6 characters)" required autocomplete="new-password" minlength="6">
+                </div>
+                
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" name="confirmPassword" placeholder="Confirm your password" required autocomplete="new-password">
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    📝 Register
+                </button>
+                
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                    After registration, wait for teacher approval to login.
+                </p>
+            </form>
+            
+            <div class="login-footer">
+                <p><a href="index.html">← Back to Role Selection</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="impulselearn.js"></script>
+    <script>
+        function showTab(tab) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const buttons = document.querySelectorAll('.tab-button');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            if (tab === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                buttons[0].classList.add('active');
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                buttons[1].classList.add('active');
+            }
+        }
+        
+        // Initialize tab buttons
+        document.querySelectorAll('.tab-button').forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

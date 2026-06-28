@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - ImpulseLearn</title>
+    <link rel="stylesheet" href="impulselearn.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="wrap nav-inner">
+            <a class="brand" href="admin.html">
+                <span>⚡ ImpulseLearn<small>Admin Panel</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="teacher-dashboard.html">Dashboard</a>
+                <a href="admin.html">Admin Panel</a>
+            </div>
+            <div class="nav-actions">
+                <span class="btn sm" style="background: rgba(108, 92, 231, 0.2);">
+                    👨‍🏫 Admin Mode
+                </span>
+                <button class="btn sm" onclick="changeTeacherPassword()">🔑 Change Password</button>
+                <a href="index.html" class="btn sm" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <div class="wrap">
+            <div class="dashboard-header">
+                <div>
+                    <h1>Admin Panel 👨‍💼</h1>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Full system administration and grade management</p>
+                </div>
+            </div>
+
+            <!-- Admin Stats -->
+            <div class="welcome-card">
+                <h2>📊 System Overview</h2>
+                <div class="grid-3" style="margin-top: 1.5rem;">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-value" id="totalStudents">0</div>
+                        <div class="stat-label">Total Students</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-value" id="approvedStudents">0</div>
+                        <div class="stat-label">Approved</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-value" id="totalQuizzes">0</div>
+                        <div class="stat-label">Total Quiz Submissions</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade Management -->
+            <div class="welcome-card">
+                <h2>🎓 Grade Management</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">View and manage all student grades</p>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Passing Score Settings</h3>
+                    <div class="grid-3">
+                        <div class="form-group">
+                            <label>Quiz Passing Score (%)</label>
+                            <input type="number" id="quizPassScore" value="50" min="0" max="100" class="form-control" style="width: 100%; padding: 0.5rem; border-radius: 8px; background: rgba(108, 92, 231, 0.1); border: 1px solid rgba(108, 92, 231, 0.3); color: white;">
+                        </div>
+                        <div class="form-group">
+                            <label>Exam Passing Score (%)</label>
+                            <input type="number" id="examPassScore" value="50" min="0" max="100" class="form-control" style="width: 100%; padding: 0.5rem; border-radius: 8px; background: rgba(108, 92, 231, 0.1); border: 1px solid rgba(108, 92, 231, 0.3); color: white;">
+                        </div>
+                        <div class="form-group">
+                            <label>Activity Passing Score (%)</label>
+                            <input type="number" id="activityPassScore" value="50" min="0" max="100" class="form-control" style="width: 100%; padding: 0.5rem; border-radius: 8px; background: rgba(108, 92, 231, 0.1); border: 1px solid rgba(108, 92, 231, 0.3); color: white;">
+                        </div>
+                    </div>
+                    <button class="btn primary" onclick="savePassingScores()" style="margin-top: 1rem;">💾 Save Settings</button>
+                </div>
+
+                <!-- Student Grades Table -->
+                <div style="overflow-x: auto;">
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">All Student Grades</h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid rgba(108, 92, 231, 0.3);">
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Student</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Email</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Quiz 1</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Quiz 2</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Quiz 3</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Quiz 4</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Quiz 5</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Exam 1</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Exam 2</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Activities</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--primary);">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gradesTableBody" style="color: var(--text-secondary);">
+                            <tr>
+                                <td colspan="11" style="padding: 2rem; text-align: center;">Loading grades...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer-grid">
+            <div>
+                <strong>⚡ ImpulseLearn</strong>
+                <p style="color: var(--text-secondary);">Admin Panel - Full system control and grade management.</p>
+            </div>
+            <div>
+                <strong>Navigation</strong>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="impulselearn.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAdminPanel();
+        });
+
+        function loadAdminPanel() {
+            const users = DB.getUsers().filter(u => u.role === 'student');
+            const approved = users.filter(u => u.approved);
+            
+            // Update stats
+            document.getElementById('totalStudents').textContent = users.length;
+            document.getElementById('approvedStudents').textContent = approved.length;
+            
+            // Count total quiz submissions
+            const totalSubmissions = approved.reduce((sum, user) => {
+                return sum + Object.keys(user.quizScores || {}).length;
+            }, 0);
+            document.getElementById('totalQuizzes').textContent = totalSubmissions;
+            
+            // Load grades table
+            loadGradesTable(approved);
+        }
+
+        function loadGradesTable(students) {
+            const tbody = document.getElementById('gradesTableBody');
+            
+            if (students.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="11" style="padding: 2rem; text-align: center;">No approved students yet</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = students.map(student => {
+                const quizScores = student.quizScores || {};
+                const examScores = student.examScores || {};
+                const activities = (student.completedMissions || []).filter(m => m.startsWith('activity')).length;
+                
+                return `
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem;"><strong>${student.fullName}</strong></td>
+                        <td style="padding: 1rem;">${student.email}</td>
+                        <td style="padding: 1rem;">${quizScores['quiz1'] !== undefined ? quizScores['quiz1'] + '%' : 'Not taken'}</td>
+                        <td style="padding: 1rem;">${quizScores['quiz2'] !== undefined ? quizScores['quiz2'] + '%' : 'Not taken'}</td>
+                        <td style="padding: 1rem;">${quizScores['quiz3'] !== undefined ? quizScores['quiz3'] + '%' : 'Not taken'}</td>
+                        <td style="padding: 1rem;">${quizScores['quiz4'] !== undefined ? quizScores['quiz4'] + '%' : 'Not taken'}</td>
+                        <td style="padding: 1rem;">${quizScores['quiz5'] !== undefined ? quizScores['quiz5'] + '%' : 'Not taken'}</td>
+                        <td style="padding: 1rem;">${examScores['exam1'] !== undefined ? examScores['exam1'] + '%' : 'Not taken'}</td>
+                        <td style="padding: 1rem;">${examScores['exam2'] !== undefined ? examScores['exam2'] + '%' : 'Not taken'}</td>
+                        <td style="padding: 1rem;">${activities}/5</td>
+                        <td style="padding: 1rem;">
+                            <button class="btn sm primary" onclick="editStudentGrades('${student.email}')">✏️ Edit</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function savePassingScores() {
+            const quizPass = document.getElementById('quizPassScore').value;
+            const examPass = document.getElementById('examPassScore').value;
+            const activityPass = document.getElementById('activityPassScore').value;
+            
+            localStorage.setItem('impulselearn_quiz_pass', quizPass);
+            localStorage.setItem('impulselearn_exam_pass', examPass);
+            localStorage.setItem('impulselearn_activity_pass', activityPass);
+            
+            showNotification('Passing scores saved successfully!', 'success');
+        }
+
+        function editStudentGrades(studentEmail) {
+            const student = DB.getUserByEmail(studentEmail);
+            if (!student) {
+                showNotification('Student not found!', 'error');
+                return;
+            }
+            
+            const quizScores = student.quizScores || {};
+            const examScores = student.examScores || {};
+            
+            const newQuiz1 = prompt(`Quiz 1 score for ${student.fullName} (0-100):`, quizScores['quiz1'] || '');
+            if (newQuiz1 !== null) {
+                quizScores['quiz1'] = parseInt(newQuiz1) || 0;
+            }
+            
+            const newQuiz2 = prompt(`Quiz 2 score for ${student.fullName} (0-100):`, quizScores['quiz2'] || '');
+            if (newQuiz2 !== null) {
+                quizScores['quiz2'] = parseInt(newQuiz2) || 0;
+            }
+            
+            const newExam1 = prompt(`Exam 1 score for ${student.fullName} (0-100):`, examScores['exam1'] || '');
+            if (newExam1 !== null) {
+                examScores['exam1'] = parseInt(newExam1) || 0;
+            }
+            
+            const newExam2 = prompt(`Exam 2 score for ${student.fullName} (0-100):`, examScores['exam2'] || '');
+            if (newExam2 !== null) {
+                examScores['exam2'] = parseInt(newExam2) || 0;
+            }
+            
+            // Update student scores
+            const users = DB.getUsers();
+            const userIndex = users.findIndex(u => u.email === studentEmail);
+            
+            if (userIndex !== -1) {
+                users[userIndex].quizScores = quizScores;
+                users[userIndex].examScores = examScores;
+                DB.saveUsers(users);
+                
+                showNotification('Grades updated successfully!', 'success');
+                loadAdminPanel();
+            }
+        }
+
+        function getPassingScore(type) {
+            const key = 'impulselearn_' + type + '_pass';
+            return parseInt(localStorage.getItem(key)) || 50;
+        }
+    </script>
+</body>
+</html>
